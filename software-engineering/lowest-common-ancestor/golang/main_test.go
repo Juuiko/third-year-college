@@ -20,10 +20,15 @@ func TestLCA(t *testing.T) {
 		y *TreeNode
 		n int
 	}{
+		//LCA root
 		{root.Left, root.Right, 6},
+		//LCA left node
 		{root.Left.Right.Left, root.Left, 2},
-		{root.Left.Right.Left, root.Right, 6},
+		//LCA single node
+		{root.Left.Right.Right, root.Left.Right.Right, 5},
+		//LCA right node
 		{root.Right.Right, root.Right.Left, 8},
+		//LCA deepest branches
 		{root.Left.Right.Left, root.Left.Right.Right, 4},
 	}
 
