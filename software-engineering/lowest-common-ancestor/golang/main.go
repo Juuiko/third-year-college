@@ -34,9 +34,6 @@ func listNodes(node *GraphNode) {
 	if !node.Visited {
 		node.Visited = true
 		NodeList = append(NodeList, node)
-		fmt.Println(node)
-		fmt.Println(&node)
-		fmt.Println("")
 		if len(node.c) != 0 {
 			for _, v := range node.c {
 				listNodes(v)
