@@ -34,6 +34,9 @@ func listNodes(node *GraphNode) {
 	if !node.Visited {
 		node.Visited = true
 		NodeList = append(NodeList, node)
+		fmt.Println(node)
+		fmt.Println(&node)
+		fmt.Println("")
 		if len(node.c) != 0 {
 			for _, v := range node.c {
 				listNodes(v)
@@ -55,12 +58,16 @@ func contains(s []*GraphNode, e *GraphNode) bool {
 }
 
 // brute force algorithm to find LCA in a DAG
-func lowestCommonAncestorDAG(root, p, q *GraphNode) []*GraphNode {
-	var lcaList []*GraphNode
+func lowestCommonAncestorDAG(root, p, q *GraphNode) []int {
+	var lcaList []int
+	if p == q {
+		lcaList = append(lcaList, p.Val)
+		return lcaList
+	}
 	listNodes(root)
 	for i := 0; i < len(NodeList); i++ {
-		if contains(NodeList[i].c, p) && contains(NodeList[i].c, p) {
-			lcaList = append(lcaList, NodeList[i])
+		if contains(NodeList[i].c, p) && contains(NodeList[i].c, q) {
+			lcaList = append(lcaList, NodeList[i].Val)
 		}
 	}
 	return lcaList
@@ -90,6 +97,6 @@ func main() {
 	rootDAG.c[1].c = append(rootDAG.c[1].c, rootDAG.c[0].c[0])
 	rootDAG.c[1].c = append(rootDAG.c[1].c, rootDAG.c[0].c[1])
 	rootDAG.c[2].c = append(rootDAG.c[2].c, rootDAG.c[1].c[0])
-	outputDAG := lowestCommonAncestorDAG(&rootDAG, rootDAG.c[0], rootDAG.c[2])
-	fmt.Println(outputDAG[0].Val)
+	outputDAG := lowestCommonAncestorDAG(&rootDAG, rootDAG.c[0].c[0], rootDAG.c[2].c[0])
+	fmt.Println(outputDAG)
 }
