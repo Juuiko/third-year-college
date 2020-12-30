@@ -42,6 +42,40 @@ func TestLCA(t *testing.T) {
 }
 
 func TestDAG(t *testing.T) {
-	//Current implementation cannot handle nodes with more than 2 offspring.
-	// TODO more code will have to be added.
+	// Build graph
+	rootDAG := GraphNode{Val: 6}
+	rootDAG.c = append(rootDAG.c, &GraphNode{Val: 2})
+	rootDAG.c = append(rootDAG.c, &GraphNode{Val: 1})
+	rootDAG.c = append(rootDAG.c, &GraphNode{Val: 0})
+	rootDAG.c[0].c = append(rootDAG.c[0].c, &GraphNode{Val: 4})
+	rootDAG.c[0].c = append(rootDAG.c[0].c, &GraphNode{Val: 3})
+	rootDAG.c[1].c = append(rootDAG.c[1].c, &GraphNode{Val: 5})
+	//all nodes created, adding branches now
+	rootDAG.c[1].c = append(rootDAG.c[1].c, rootDAG.c[0].c[0])
+	rootDAG.c[1].c = append(rootDAG.c[1].c, rootDAG.c[1].c[0])
+	rootDAG.c[2].c = append(rootDAG.c[2].c, rootDAG.c[1].c[2])
+
+	//make testing table
+	table := []struct {
+		x *GraphNode
+		y *GraphNode
+		n int
+	}{
+		//LCADAG root
+		{rootDAG.c[0], rootDAG.c[2], 6},
+		//LCADAG nodes next to eachother
+		{rootDAG.c[0].c[0], rootDAG.c[0].c[1], 2},
+		//LCADAG far nodes
+		{rootDAG.c[0].c[0], rootDAG.c[2].c[0], 1},
+		//LCADAG repeating nodes
+		{&rootDAG, &rootDAG, 6},
+	}
+
+	//try each case
+	for _, row := range table {
+		result := lowestCommonAncestorDAG(&rootDAG, row.x, row.y)
+		if result[0] != row.n {
+			t.Errorf("LCADAG was incorrect, got: %d, want: %d.", result[0], row.n)
+		}
+	}
 }
