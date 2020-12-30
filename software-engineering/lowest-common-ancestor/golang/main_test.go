@@ -40,3 +40,8 @@ func TestLCA(t *testing.T) {
 		}
 	}
 }
+
+func TestDAG(t *testing.T) {
+	//Current implementation cannot handle nodes with more than 2 offspring.
+	// TODO more code will have to be added.
+}
