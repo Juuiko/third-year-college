@@ -69,7 +69,7 @@ class PieCard extends Component {
 
   render() {
     return (
-      <Card onClick={this.onClick} className="graph-card" style={{height: '440px'}}>
+      <Card onClick={this.onClick} className="graph-card" style={{height: '420px'}}>
         <Card.Body>
           <Card.Title className="card-title">{this.props.title}</Card.Title>
           {this.MyPie(this.props.data)}
