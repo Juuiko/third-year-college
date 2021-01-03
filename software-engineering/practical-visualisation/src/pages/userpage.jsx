@@ -25,11 +25,11 @@ class UserPage extends Component {
   render() {
     return (
       <div className="container-fluid">
-           <Bar />
+           <Bar text={this.props.location.searchText}/>
            <LoadingOverlay
              active={this.state.isActive}
              spinner
-             text={this.props.location.searchText}
+             text="Loading . . ."
              >
            <div className="container-fluid">
            <CardDeck className="deck">

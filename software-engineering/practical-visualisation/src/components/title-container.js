@@ -7,10 +7,12 @@ class TitleContainer extends React.Component {
     }
     render() {
         return(
-                <div className="col-md-12 text-center">
+                <div className="row h-75">
+                    <div className="col-sm-12 text-center my-auto">
                      <h1><b>{this.props.title}</b></h1>
-                     <h4>{this.props.subtitle}</h4  >
-                  </div>
+                     <h4>{this.props.subtitle}</h4>
+                    </div>
+                </div>
         )
     }
 }

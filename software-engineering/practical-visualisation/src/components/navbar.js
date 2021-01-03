@@ -6,10 +6,15 @@ import {Form,FormControl,Button,Nav,Navbar} from 'react-bootstrap';
 
 class NavBar extends React.Component {
 
+    constructor(props) {
+        super()
+    }
+
     state = {
-        searchText: ""
+        searchText: "",
+        navBarText: " "
     };
-    
+
     handleSearchInput = event => {
     this.setState({
         searchText: event.target.value
@@ -17,10 +22,20 @@ class NavBar extends React.Component {
     };
 
     render() {
+        let barText;
+        if (this.props.text === ""){
+            barText = "error: please entre a username"
+        } else if (this.props.text === "home"){
+            barText = "home"
+        } else {
+            barText = this.props.text + "'s profile"
+        }
+
         return(
                 <div className="container-fluid">
                      <Navbar bg="light" expand="lg">
-                     <Navbar.Brand><Link to="/">Github Vis</Link></Navbar.Brand>
+                     <Navbar.Brand><Link to="/">GLV</Link></Navbar.Brand>
+                     <Navbar.Text>{barText}</Navbar.Text>
                      <Navbar.Toggle aria-controls="basic-navbar-nav" />
                      <Navbar.Collapse id="basic-navbar-nav">
                      <Nav className="mr-auto">
@@ -33,8 +48,7 @@ class NavBar extends React.Component {
                          placeholder="Github username"
                          className="mr-sm-2"
                          />
-                         <Button 
-                             onClick={this.handleSearchSubmit}
+                         <Button
                              variant="outline-info">
                              <Link to={{
                                  pathname: "/user",
