@@ -1,0 +1,32 @@
+[
+  {
+    "stat": "num of commits",
+    "GO": 97,
+    "Rust": 20,
+    "Python": 105
+  },
+  {
+    "stat": "avg commit size",
+    "GO": 114,
+    "Rust": 26,
+    "Python": 89
+  },
+  {
+    "stat": "avg commit %",
+    "GO": 81,
+    "Rust": 71,
+    "Python": 47
+  },
+  {
+    "stat": "num of projects",
+    "GO": 84,
+    "Rust": 57,
+    "Python": 77
+  },
+  {
+    "stat": "test",
+    "GO": 29,
+    "Rust": 30,
+    "Python": 34
+  }
+]

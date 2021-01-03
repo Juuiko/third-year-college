@@ -6,9 +6,11 @@ import CardDeck from 'react-bootstrap/CardDeck'
 import PieCard from '../components/pie-card'
 import SunCard from '../components/sunburst-card'
 import StreamCard from '../components/stream-card'
+import RadarCard from '../components/radar-card'
 import Data from '../backend/testStats.json'
 import Data2 from '../backend/testStats2.json'
 import Data3 from '../backend/testStats3.json'
+import Data4 from '../backend/testStats4.json'
 
 class HomePage extends Component {
 
@@ -44,11 +46,11 @@ class HomePage extends Component {
            data={Data3}
            fullscreen="/fullscreenPie"
            />
-           <PieCard
+           <RadarCard
            title="Test Graph"
            history={this.props.history}
            graph="test"
-           data={Data}
+           data={Data4}
            fullscreen="/fullscreenPie"
            />
            </CardDeck>
