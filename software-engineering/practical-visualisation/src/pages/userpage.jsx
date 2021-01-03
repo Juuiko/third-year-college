@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {Form,FormControl,Button,Nav,Navbar} from 'react-bootstrap';
-
+import LoadingOverlay from 'react-loading-overlay';
 
 import CardDeck from 'react-bootstrap/CardDeck'
 import PieCard from '../components/pie-card'
 import SunCard from '../components/sunburst-card'
 import StreamCard from '../components/stream-card'
 import RadarCard from '../components/radar-card'
+import Bar from '../components/navbar'
 import Data from '../backend/testStats.json'
 import Data2 from '../backend/testStats2.json'
 import Data3 from '../backend/testStats3.json'
@@ -16,21 +15,22 @@ import Data4 from '../backend/testStats4.json'
 
 class UserPage extends Component {
 
+  constructor() {
+    super()
+    this.state = {
+      isActive: true
+    }
+  }
+
   render() {
     return (
       <div className="container-fluid">
-           <Navbar bg="light" expand="lg">
-             <Navbar.Brand><Link to="/">Github Vis</Link></Navbar.Brand>
-             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-             <Navbar.Collapse id="basic-navbar-nav">
-               <Nav className="mr-auto">
-               </Nav>
-               <Form inline>
-                 <FormControl type="text" placeholder="Github username" className="mr-sm-2" />
-                 <Button variant="outline-info"><Link to="/juuiko">Search</Link></Button>
-               </Form>
-             </Navbar.Collapse>
-           </Navbar>
+           <Bar />
+           <LoadingOverlay
+             active={this.state.isActive}
+             spinner
+             text={this.props.location.searchText}
+             >
            <div className="container-fluid">
            <CardDeck className="deck">
            <PieCard
@@ -64,7 +64,8 @@ class UserPage extends Component {
            fullscreen="/fullscreenPie"
            />
            </CardDeck>
-           </div>
+           </div>           
+          </LoadingOverlay>
       </div>
     )
   }

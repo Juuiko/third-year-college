@@ -11,7 +11,7 @@ function App() {
       <Router history={history} basename=".">
         <Switch>
           <Route exact path="/" component={HomePage}/>
-          <Route exact path="/juuiko" component={UserPage}/>
+          <Route exact path="/user" component={UserPage}/>
         </Switch>
       </Router>
     </div>
