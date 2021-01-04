@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/google/go-github/github"
+	"golang.org/x/oauth2"
 )
 
 //Data is compilation of all necessary API calls
@@ -15,8 +16,15 @@ type Data struct {
 }
 
 func callGithubAPI(user string) []Data {
+	//authenticate
+	ctx := context.Background()
+	ts := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: ""},
+	)
+	tc := oauth2.NewClient(ctx, ts)
+
 	//make github api client
-	client := github.NewClient(nil)
+	client := github.NewClient(tc)
 
 	//repo list sorting
 	opt := &github.RepositoryListOptions{Type: "owner", Sort: "updated", Direction: "desc"}

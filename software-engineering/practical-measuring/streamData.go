@@ -58,22 +58,27 @@ func calcStreamData(data []Data) {
 		return streamData[i].Date.Before(streamData[j].Date)
 	})
 
-	//make an emtpy map with each datatype
-	frame := map[string]int{}
-	for i := range languages {
-		frame[languages[i]] = 0
-	}
-
 	//create a slice of undefined frames
 	frames := make([]map[string]int, len(streamData))
-
-	//insert first map
-	frames[0] = frame
+	for i := range frames {
+		frames[i] = make(map[string]int)
+	}
+	for i := range frames {
+		for j := range languages {
+			frames[i][languages[j]] = 0
+		}
+	}
 
 	//fill in map
 	for i := 0; i < len(streamData)-1; i++ {
-		frames[i][streamData[i].Lang] = streamData[i].Size
-		frames[i+1] = frames[i]
+
+		temp := frames[i][streamData[i].Lang]
+		frames[i][streamData[i].Lang] = streamData[i].Size + temp
+		tempMap := make(map[string]int)
+		for k, v := range frames[i] {
+			tempMap[k] = v
+		}
+		frames[i+1] = tempMap
 	}
 
 	//convert data slice to json
