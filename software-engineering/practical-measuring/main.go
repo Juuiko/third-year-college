@@ -2,7 +2,9 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 
 	"github.com/google/go-github/github"
 )
@@ -18,5 +20,16 @@ func main() {
 		fmt.Println(err)
 	}
 
-	fmt.Printf(github.Stringify(repos))
+	languages, _, err1 := client.Repositories.ListLanguages(context.Background(), "juuiko", repos[0].GetName())
+	if err1 != nil {
+		fmt.Println(err1)
+	}
+
+	jsonString, err := json.Marshal(languages)
+	fmt.Println(languages)
+	fmt.Println(string(jsonString))
+	err = ioutil.WriteFile("test.json", jsonString, 0644)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
