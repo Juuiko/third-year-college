@@ -1,10 +1,5 @@
 package main
 
-//type SunChart struct {
-//	loc  int    `json:"number"`
-//	name string `json:"title"`
-//}
-
 //type StreamChart struct {
 //	loc  int    `json:"number"`
 //	name string `json:"title"`
@@ -19,6 +14,7 @@ func main() {
 
 	data := callGithubAPI("juuiko")
 	calcPieData(data)
+	calcSunData(data)
 
 	//get total bytes in the repo
 	//total := 0

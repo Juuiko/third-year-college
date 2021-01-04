@@ -12,7 +12,7 @@ type PieChart struct {
 	Use  int    `json:"value"`
 }
 
-func calcPieData(data []Data) bool {
+func calcPieData(data []Data) {
 	//setup slice for pie chart value
 	pieData := make([]PieChart, 0)
 
@@ -39,14 +39,14 @@ func calcPieData(data []Data) bool {
 		}
 
 	}
+	//convert data slice to json
 	jsonData, err := json.Marshal(pieData)
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(string(jsonData))
+	//write json to a file
 	err = ioutil.WriteFile("pieStats.json", jsonData, 0644)
 	if err != nil {
 		fmt.Println(err)
 	}
-	return true
 }
