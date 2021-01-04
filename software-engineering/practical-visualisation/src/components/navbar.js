@@ -42,7 +42,7 @@ class NavBar extends React.Component {
                      </Nav>
                      <Form inline
                         name="searchbar"
-                        method="get"
+                        method="post"
                         data-netlify="true"
                         onSubmit="submit"
                      >
