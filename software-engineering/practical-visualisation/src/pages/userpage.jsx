@@ -8,7 +8,7 @@ import SunCard from '../components/sunburst-card'
 import StreamCard from '../components/stream-card'
 import RadarCard from '../components/radar-card'
 import Bar from '../components/navbar'
-import Data from '../backend/testStats.json'
+import pieData from '../backend/pieStats.json'
 import Data2 from '../backend/testStats2.json'
 import Data3 from '../backend/testStats3.json'
 import Data4 from '../backend/testStats4.json'
@@ -18,7 +18,7 @@ class UserPage extends Component {
   constructor() {
     super()
     this.state = {
-      isActive: true
+      isActive: false
     }
   }
 
@@ -34,10 +34,10 @@ class UserPage extends Component {
            <div className="container-fluid">
            <CardDeck className="deck">
            <PieCard
-           title="Test Graph"
+           title="Over all language distribution"
            history={this.props.history}
            graph="test"
-           data={Data}
+           data={pieData}
            fullscreen="/fullscreenPie"
            />
            <SunCard
