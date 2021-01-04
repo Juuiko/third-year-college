@@ -2,12 +2,12 @@ import Card from 'react-bootstrap/Card'
 import React, { Component } from 'react'
 import { ResponsiveSunburst } from '@nivo/sunburst'
 
-class PieCard extends Component {
+class SunCard extends Component {
 
   MySun = ({ data }) => (
     <ResponsiveSunburst
         data={this.props.data}
-        margin={{ top: 40, right: 20, bottom: 20, left: 20 }}
+        margin={{ top: 10, right: 20, bottom: 30, left: 20 }}
         id="name"
         value="loc"
         cornerRadius={2}
@@ -23,7 +23,7 @@ class PieCard extends Component {
 
   render() {
     return (
-      <Card onClick={this.onClick} className="graph-card" style={{height: '420px'}}>
+      <Card className="graph-card" style={{height: '420px'}}>
         <Card.Body>
           <Card.Title className="card-title">{this.props.title}</Card.Title>
           {this.MySun(this.props.data)}
@@ -31,17 +31,6 @@ class PieCard extends Component {
       </Card>
     )
   }
-
-  onClick = () => {
-       this.props.history.push({
-       pathname: this.props.fullscreen,
-       state: {
-            title: this.props.title,
-            data: this.props.data,
-            keys: this.props.graph,
-       }
-     })
-  }
 }
 
-export default PieCard
+export default SunCard

@@ -7,7 +7,7 @@ class PieCard extends Component {
     MyPie = ({ data }) => (
         <ResponsivePie
             data={this.props.data}
-            margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+            margin={{ top: 40, right: 80, bottom: 40, left: 80 }}
             innerRadius={0.5}
             padAngle={0.7}
             cornerRadius={1}
@@ -23,24 +23,13 @@ class PieCard extends Component {
 
   render() {
     return (
-      <Card onClick={this.onClick} className="graph-card" style={{height: '420px'}}>
+      <Card className="graph-card" style={{height: '420px'}}>
         <Card.Body>
           <Card.Title className="card-title">{this.props.title}</Card.Title>
           {this.MyPie(this.props.data)}
         </Card.Body>
       </Card>
     )
-  }
-
-  onClick = () => {
-       this.props.history.push({
-       pathname: this.props.fullscreen,
-       state: {
-            title: this.props.title,
-            data: this.props.data,
-            keys: this.props.graph,
-       }
-     })
   }
 }
 

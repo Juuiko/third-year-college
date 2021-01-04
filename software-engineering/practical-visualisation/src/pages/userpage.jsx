@@ -6,19 +6,17 @@ import CardDeck from 'react-bootstrap/CardDeck'
 import PieCard from '../components/pie-card'
 import SunCard from '../components/sunburst-card'
 import StreamCard from '../components/stream-card'
-import RadarCard from '../components/radar-card'
 import Bar from '../components/navbar'
 import pieData from '../backend/pieStats.json'
-import Data2 from '../backend/testStats2.json'
-import Data3 from '../backend/testStats3.json'
-import Data4 from '../backend/testStats4.json'
+import sunData from '../backend/sunStats.json'
+import streamData from '../backend/streamStats.json'
 
 class UserPage extends Component {
 
   constructor() {
     super()
     this.state = {
-      isActive: false
+      isActive: true
     }
   }
 
@@ -34,34 +32,24 @@ class UserPage extends Component {
            <div className="container-fluid">
            <CardDeck className="deck">
            <PieCard
-           title="Over all language distribution"
+           title="Overall language distribution"
            history={this.props.history}
            graph="test"
            data={pieData}
-           fullscreen="/fullscreenPie"
            />
            <SunCard
-           title="Test Graph"
+           title="Language in each repo"
            history={this.props.history}
            graph="test"
-           data={Data2}
-           fullscreen="/fullscreenPie"
+           data={sunData}
            />
            </CardDeck>
            <CardDeck className="deck">
            <StreamCard
-           title="Test Graph"
+           title="Account codebase evolution over time"
            history={this.props.history}
            graph="test"
-           data={Data3}
-           fullscreen="/fullscreenPie"
-           />
-           <RadarCard
-           title="Test Graph"
-           history={this.props.history}
-           graph="test"
-           data={Data4}
-           fullscreen="/fullscreenPie"
+           data={streamData}
            />
            </CardDeck>
            </div>           
