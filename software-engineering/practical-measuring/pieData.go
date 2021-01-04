@@ -1,18 +1,12 @@
 package main
 
-import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
-)
-
 //PieChart is the data type to make the final JSON the pie chart will use
 type PieChart struct {
 	Lang string `json:"id"`
 	Use  int    `json:"value"`
 }
 
-func calcPieData(data []Data) {
+func calcPieData(data []Data) []PieChart {
 	//setup slice for pie chart value
 	pieData := make([]PieChart, 0)
 
@@ -39,14 +33,5 @@ func calcPieData(data []Data) {
 		}
 
 	}
-	//convert data slice to json
-	jsonData, err := json.Marshal(pieData)
-	if err != nil {
-		fmt.Println(err)
-	}
-	//write json to a file
-	err = ioutil.WriteFile("pieStats.json", jsonData, 0644)
-	if err != nil {
-		fmt.Println(err)
-	}
+	return pieData
 }

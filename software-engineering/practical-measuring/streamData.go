@@ -1,9 +1,6 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
 	"sort"
 	"time"
 )
@@ -15,7 +12,7 @@ type StreamChart struct {
 	Date time.Time `json:"time"`
 }
 
-func calcStreamData(data []Data) {
+func calcStreamData(data []Data) []map[string]int {
 
 	//init sum variables
 	repoSize := 0
@@ -81,15 +78,5 @@ func calcStreamData(data []Data) {
 		frames[i+1] = tempMap
 	}
 
-	//convert data slice to json
-	jsonData, err := json.Marshal(frames)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	//write json to a file
-	err = ioutil.WriteFile("streamStats.json", jsonData, 0644)
-	if err != nil {
-		fmt.Println(err)
-	}
+	return frames
 }

@@ -1,11 +1,5 @@
 package main
 
-import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
-)
-
 //SunChartRoot is the data type to hold the root of the chart
 type SunChartRoot struct {
 	Name      string         `json:"name"`
@@ -24,7 +18,7 @@ type SunChartLang struct {
 	Loc  int    `json:"loc"`
 }
 
-func calcSunData(data []Data) {
+func calcSunData(data []Data) []SunChartRoot {
 	//setup slice for pie chart value
 	sunData := make([]SunChartRepo, 0)
 
@@ -44,19 +38,5 @@ func calcSunData(data []Data) {
 	finalData := make([]SunChartRoot, 1)
 	finalData[0] = SunChartRoot{"root", sunData}
 
-	//convert data slice to json
-	jsonData, err := json.Marshal(finalData)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	//clean up first and last elements from the byte slice
-	jsonData = jsonData[1:]
-	jsonData = jsonData[:len(jsonData)-1]
-
-	//write json to a file
-	err = ioutil.WriteFile("sunStats.json", jsonData, 0644)
-	if err != nil {
-		fmt.Println(err)
-	}
+	return finalData
 }
