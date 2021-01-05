@@ -7,7 +7,6 @@ import PieCard from '../components/pie-card'
 import SunCard from '../components/sunburst-card'
 import StreamCard from '../components/stream-card'
 import Bar from '../components/navbar'
-import pieData from '../backend/pieStats.json'
 import sunData from '../backend/sunStats.json'
 import streamData from '../backend/streamStats.json'
 
@@ -16,8 +15,17 @@ class UserPage extends Component {
   constructor() {
     super()
     this.state = {
-      isActive: true
+      isActive: true,
+      data: ""
     }
+  }
+
+  async componentDidMount() {
+    // Simple GET request using fetch
+    const response = await fetch('https://dry-meadow-51924.herokuapp.com/api?user=juuiko');
+    const data = await response.json(); 
+    this.setState({ data: data });
+    this.setState ({ isActive: false });
   }
 
   render() {
@@ -35,7 +43,7 @@ class UserPage extends Component {
            title="Overall language distribution"
            history={this.props.history}
            graph="test"
-           data={pieData}
+           data={this.state.data}
            />
            <SunCard
            title="Language in each repo"

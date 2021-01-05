@@ -22,12 +22,18 @@ class SunCard extends Component {
 )
 
   render() {
+    let graph;
+    if (this.props.data === "") {
+      graph = "Graph Loading . . .";
+    } else {
+      graph = this.MySun(this.props.data);
+    }
     return (
       <Card className="graph-card" style={{height: '420px'}}>
         <Card.Body>
           <Card.Title className="card-title">{this.props.title}</Card.Title>
-          {this.MySun(this.props.data)}
-        </Card.Body>
+            {graph}        
+          </Card.Body>
       </Card>
     )
   }

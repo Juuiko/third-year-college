@@ -22,11 +22,17 @@ class PieCard extends Component {
     )
 
   render() {
+    let graph;
+    if (this.props.data === "") {
+      graph = "Graph Loading . . .";
+    } else {
+      graph = this.MyPie(this.props.data);
+    }
     return (
       <Card className="graph-card" style={{height: '420px'}}>
         <Card.Body>
           <Card.Title className="card-title">{this.props.title}</Card.Title>
-          {this.MyPie(this.props.data)}
+          {graph}
         </Card.Body>
       </Card>
     )

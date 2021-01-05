@@ -40,13 +40,7 @@ class NavBar extends React.Component {
                      <Navbar.Collapse id="basic-navbar-nav">
                      <Nav className="mr-auto">
                      </Nav>
-                     <Form inline
-                        name="searchbar"
-                        method="post"
-                        data-netlify="true"
-                        onSubmit="submit"
-                     >
-                         <input type="hidden" name="form-name" value="searchbar" />
+                     <Form inline>
                          <FormControl
                          onChange={this.handleSearchInput}
                          value={this.state.searchText}
