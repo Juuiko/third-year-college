@@ -21,6 +21,12 @@ class NavBar extends React.Component {
     });
     };
 
+    handleKeyPress(target) {
+        if(target.charCode === 13) {
+            target.preventDefault();
+        }
+      }
+
     render() {
         let barText;
         if (this.props.text === ""){
@@ -47,15 +53,16 @@ class NavBar extends React.Component {
                          type="text"
                          placeholder="Github username"
                          className="mr-sm-2"
+                         onKeyPress={(e) => this.handleKeyPress(e)}
                          />
-                         <Button
-                             variant="outline-info">
-                             <Link to={{
+                        <Link to={{
                                  pathname: "/user",
                                  searchText: this.state.searchText
                              }}>
-                             Search</Link>
+                         <Button variant="outline-info">
+                             Search
                          </Button>
+                        </Link>
                      </Form>
                      </Navbar.Collapse>
                  </Navbar>

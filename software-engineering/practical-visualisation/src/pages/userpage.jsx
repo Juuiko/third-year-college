@@ -23,6 +23,21 @@ class UserPage extends Component {
   }
 
   async componentDidMount() {
+    this.fetchData();
+  }
+
+  async componentDidUpdate(prevProps) {
+    if (prevProps.location.searchText !== this.props.location.searchText) {
+      this.setState({ dataPie: "" });
+      this.setState({ dataSun: "" });
+      this.setState({ dataStream: "" });
+      this.setState ({ isActive: true });
+      this.setState ({dataStreamKeys: "" });
+      this.fetchData();
+    }
+  }
+
+  async fetchData() {
     // Simple GET request using fetch
     console.log(this.props.location.searchText)
     if (this.props.location.searchText === undefined) {
@@ -37,6 +52,8 @@ class UserPage extends Component {
       this.setState ({dataStreamKeys: Object.keys(this.state.dataStream.[0])});
     }
   }
+
+  
 
   render() {
     return (
