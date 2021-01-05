@@ -8,8 +8,15 @@ import (
 	"os"
 )
 
+//FinalJSON is the data type to make the final JSON
+type FinalJSON struct {
+	Pie    []PieChart       `json:"pie"`
+	Sun    []SunChartRoot   `json:"sun"`
+	Stream []map[string]int `json:"stream"`
+}
+
 //heroku port calc func
-func getPort() string {
+func myPort() string {
 	var port = os.Getenv("PORT")
 	if port == "" {
 		port = "4747"
@@ -29,16 +36,14 @@ func githubPage(w http.ResponseWriter, r *http.Request) {
 			streamData := calcStreamData(data)
 
 			//send json to get request
-			json.NewEncoder(w).Encode(pieData)
-			json.NewEncoder(w).Encode(streamData)
-			json.NewEncoder(w).Encode(sunData)
+			json.NewEncoder(w).Encode(FinalJSON{pieData, sunData, streamData})
 		}
 	}
 }
 
 func handleRequests() {
 	http.HandleFunc("/api", githubPage)
-	log.Fatal(http.ListenAndServe(getPort(), nil))
+	log.Fatal(http.ListenAndServe(myPort(), nil))
 }
 
 func main() {
