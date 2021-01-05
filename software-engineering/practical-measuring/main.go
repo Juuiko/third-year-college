@@ -11,7 +11,7 @@ import (
 //FinalJSON is the data type to make the final JSON
 type FinalJSON struct {
 	Pie    []PieChart       `json:"pie"`
-	Sun    []SunChartRoot   `json:"sun"`
+	Sun    []SunChartRepo   `json:"sun"`
 	Stream []map[string]int `json:"stream"`
 }
 

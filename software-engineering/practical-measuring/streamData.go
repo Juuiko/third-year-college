@@ -32,8 +32,9 @@ func calcStreamData(data []Data) []map[string]int {
 		for _, v := range data[i].languages {
 			repoSize += v
 		}
-		commitSize = repoSize / len(data[i].commits)
-
+		if len(data[i].commits) > 0 {
+			commitSize = repoSize / len(data[i].commits)
+		}
 		//add each commit to a slice
 		for j := range data[i].commits {
 			streamData = append(streamData, StreamChart{data[i].repo.GetLanguage(), commitSize, *data[i].commits[j].GetCommit().GetAuthor().Date})
