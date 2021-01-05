@@ -7,25 +7,35 @@ import PieCard from '../components/pie-card'
 import SunCard from '../components/sunburst-card'
 import StreamCard from '../components/stream-card'
 import Bar from '../components/navbar'
-import sunData from '../backend/sunStats.json'
-import streamData from '../backend/streamStats.json'
 
 class UserPage extends Component {
 
   constructor() {
     super()
     this.state = {
+      loadingText: "Loading . . .",
       isActive: true,
-      data: ""
+      dataPie: "",
+      dataSun: "",
+      dataStream: "",
+      dataStreamKeys: ""
     }
   }
 
   async componentDidMount() {
     // Simple GET request using fetch
-    const response = await fetch('https://dry-meadow-51924.herokuapp.com/api?user=juuiko');
-    const data = await response.json(); 
-    this.setState({ data: data });
-    this.setState ({ isActive: false });
+    console.log(this.props.location.searchText)
+    if (this.props.location.searchText === undefined) {
+      this.setState({ loadingText: "undefined user name, please try another" });
+    } else {
+      const response = await fetch('https://dry-meadow-51924.herokuapp.com/api?user=' + this.props.location.searchText);
+      const data = await response.json(); 
+      this.setState({ dataPie: data.pie });
+      this.setState({ dataSun: {"name":"chart", "children":data.sun} });
+      this.setState({ dataStream: data.stream });
+      this.setState ({ isActive: false });
+      this.setState ({dataStreamKeys: Object.keys(this.state.dataStream.[0])});
+    }
   }
 
   render() {
@@ -35,7 +45,7 @@ class UserPage extends Component {
            <LoadingOverlay
              active={this.state.isActive}
              spinner
-             text="Loading . . ."
+             text={this.state.loadingText}
              >
            <div className="container-fluid">
            <CardDeck className="deck">
@@ -43,13 +53,13 @@ class UserPage extends Component {
            title="Overall language distribution"
            history={this.props.history}
            graph="test"
-           data={this.state.data}
+           data={this.state.dataPie}
            />
            <SunCard
            title="Language in each repo"
            history={this.props.history}
            graph="test"
-           data={sunData}
+           data={this.state.dataSun}
            />
            </CardDeck>
            <CardDeck className="deck">
@@ -57,7 +67,8 @@ class UserPage extends Component {
            title="Account codebase evolution over time"
            history={this.props.history}
            graph="test"
-           data={streamData}
+           data={this.state.dataStream}
+           keys={this.state.dataStreamKeys}
            />
            </CardDeck>
            </div>           

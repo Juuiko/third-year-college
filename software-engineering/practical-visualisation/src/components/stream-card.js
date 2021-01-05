@@ -7,18 +7,11 @@ class StreamCard extends Component {
   MyStream = ({ data }) => (
     <ResponsiveStream
         data={this.props.data}
-        keys={[ 'Go', 'Java', 'JavaScript', 'Python', 'VHDL', 'HTML' ]}
-        margin={{ top: 5, right: 10, bottom: 50, left: 10 }}
+        keys={this.props.keys}
+        margin={{ top: 5, right: 10, bottom: 40, left: 10 }}
         axisTop={null}
         axisRight={null}
-        axisBottom={{
-            orient: 'left',
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: '',
-            legendOffset: 0
-        }}
+        axisBottom={null}
         axisLeft={null}
         offsetType="none"
         order="descending"
