@@ -1,0 +1,755 @@
+
+==================== FINAL INTERFACE ====================
+2020-12-18 12:29:33.972058453 UTC
+
+interface prfchk-0.9.2.0-KV9VXCJ2aMmB0dkHlBTwZT:REPL 8064
+  interface hash: 03c3ff46ff6888560791ef70817c67fb
+  ABI hash: 0f42bade456ee027ab2680d95227c488
+  export-list hash: 64793fb9dbfecf0e880568a0f3dacf9d
+  orphan hash: 559ef31a2cb831a668d18c30615b6706
+  flag hash: b6427d8aeb77a442ff3ccc1f154c876f
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  REPL.charTypeParse
+  REPL.clearLong
+  REPL.idParse
+  REPL.pickByNumber
+  REPL.pickPairing
+  REPL.putListOneLine
+  REPL.runREPL
+  REPL.selectPairings
+  REPL.wordParse
+  REPL.REPLArguments
+  REPL.REPLCmd
+  REPL.REPLCmdDescr
+  REPL.REPLCommands
+  REPL.REPLConfig{REPL.REPLC replCommands replEOFReplacement replEndCondition replEndTidy replHelpCmds replParser replPrompt replQuit replQuitCmds}
+  REPL.REPLExit
+  REPL.REPLParser
+module dependencies: Utilities
+package dependencies: array-0.5.3.0 base-4.12.0.0
+                      bytestring-0.10.8.2 containers-0.6.0.1 deepseq-1.4.4.0
+                      directory-1.3.3.0 filepath-1.4.2.1 ghc-prim-0.5.3 haskeline-0.7.5.0
+                      integer-gmp-1.0.2.0 stm-2.5.0.0 terminfo-0.4.1.2 time-1.8.0.2
+                      transformers-0.5.6.2 unix-2.7.2.2
+orphans: time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian
+         stm-2.5.0.0:Control.Monad.STM
+         transformers-0.5.6.2:Control.Monad.Trans.Error
+         base-4.12.0.0:GHC.Float base-4.12.0.0:GHC.Base
+family instance modules: base-4.12.0.0:Control.Applicative
+                         base-4.12.0.0:Data.Complex base-4.12.0.0:Data.Functor.Compose
+                         base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity
+                         base-4.12.0.0:Data.Functor.Product base-4.12.0.0:Data.Functor.Sum
+                         base-4.12.0.0:Data.Monoid base-4.12.0.0:Data.Semigroup
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:Data.Version
+                         base-4.12.0.0:Data.Void base-4.12.0.0:GHC.Exts
+                         base-4.12.0.0:GHC.Generics base-4.12.0.0:GHC.IO.Exception
+                         containers-0.6.0.1:Data.IntMap.Internal
+                         containers-0.6.0.1:Data.IntSet.Internal
+                         containers-0.6.0.1:Data.Map.Internal
+                         containers-0.6.0.1:Data.Sequence.Internal
+                         containers-0.6.0.1:Data.Set.Internal
+import  -/  base-4.12.0.0:Control.Monad.IO.Class e96805f9d79f75be66a0d44eb83064c1
+import  -/  base-4.12.0.0:Data.Char 74f67fe9150a102afa18766e840f6832
+import  -/  base-4.12.0.0:Data.Foldable 5f70351366640f007be66681d2212df8
+import  -/  base-4.12.0.0:Data.List 17d0c71c557e42abe196f130788fd997
+import  -/  base-4.12.0.0:Data.OldList e931cf456dc87f11ee6e6fb153bca23e
+import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
+import  -/  base-4.12.0.0:GHC.IO.Handle fe51659cf05ea3ecd36fe5e2d515d89a
+import  -/  base-4.12.0.0:GHC.IO.Handle.FD 57dd508e0260edfe7dfb9592eb9a6e63
+import  -/  base-4.12.0.0:GHC.List 4014a3c8a3b7c31c8325f6bcf1feea4a
+import  -/  base-4.12.0.0:GHC.Show 838a5d039379d82d9626aae53dfce276
+import  -/  base-4.12.0.0:GHC.Unicode 87726eb81a3f9c9b22160a0afd5dc56a
+import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
+import  -/  base-4.12.0.0:System.IO dd4f3cfe73b94b7cae46a4ca98a3f09f
+import  -/  base-4.12.0.0:Text.Read 87f80fc2538a174aea915dd98f74fc0a
+import  -/  ghc-prim-0.5.3:GHC.Classes 0f6fd7d7db53fc48f6e1f01803cc6c9d
+import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
+import  -/  haskeline-0.7.5.0:System.Console.Haskeline 29d5aa4f03f862c2cf4b448844d23b63
+import  -/  haskeline-0.7.5.0:System.Console.Haskeline.InputT f154734c248907a0c8734b0a4cdd03d8
+import  -/  Utilities a85badecc7aa0b805e79b92bddf5af71
+  exports: 35137128ec10d5d96582b028793d643a
+  clearIt ed0c010e13e07ae0b4eb4408effbfdaa
+  nlookup 1b1637ab8b898a30ae1a597055e90890
+  numberList 8264b86e10bb095e0ce8d3b1a72c7374
+  readInt 24fab3c87d0c249a364729163a740360
+  trim c96c0a5fd2ed9276d73fcabfd0608535
+c6c193b9c26b539fe24e1e38af70f56d
+  $scompleteFilename ::
+    System.Console.Haskeline.Completion.CompletionFunc GHC.Types.IO
+  {- Arity: 1, Strictness: <S(SL),1*U(U,U)>, Inline: [2],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w1 :: (GHC.Base.String, GHC.Base.String)) ->
+                 case w1 of ww { (,) ww1 ww2 ->
+                 System.Console.Haskeline.Completion.$wcompleteFilename
+                   @ GHC.Types.IO
+                   Control.Monad.IO.Class.$fMonadIOIO
+                   ww1
+                   ww2 }) -}
+7d6cc319dd42169dbd6612763cd54467
+  $tc'REPLC :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   488768826020639147##
+                   4163309651740453398##
+                   REPL.$trModule
+                   REPL.$tc'REPLC2
+                   1#
+                   REPL.$tc'REPLC1) -}
+6708ebdc6c6bf96bbe8d9cfba5c2dcd9
+  $tc'REPLC1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+6ea5b63eef7ec2133cc68981fd4f950c
+  $tc'REPLC2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS REPL.$tc'REPLC3) -}
+36740aac58107c160dfa72945faed418
+  $tc'REPLC3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'REPLC"#) -}
+51806fdd7043b9e2f16d0c26ed00b65f
+  $tcREPLConfig :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16661174034432009336##
+                   7003454439932142934##
+                   REPL.$trModule
+                   REPL.$tcREPLConfig1
+                   0#
+                   GHC.Types.krep$*Arr*) -}
+35439a9e934dafbc4d31e304cc4071c5
+  $tcREPLConfig1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS REPL.$tcREPLConfig2) -}
+820a0538e90193a855e91fdb08ba7fe9
+  $tcREPLConfig2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("REPLConfig"#) -}
+3af43dda4f885cb842b1a176b98096ec
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module REPL.$trModule3 REPL.$trModule1) -}
+cd1cde753ae516d5535d056652c39804
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS REPL.$trModule2) -}
+6990a23293c7fa172176dda598f8f714
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("REPL"#) -}
+e6035d69bbbbe341bbc2052f637d5d7e
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS REPL.$trModule4) -}
+768c94da431f048d660644ba83b4891a
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("prfchk-0.9.2.0-KV9VXCJ2aMmB0dkHlBTwZT"#) -}
+26277660a230b0cb82780a0315a7a5e7
+  type REPLArguments = [GHC.Base.String]
+ee32e74cbc02b14c74d4086e144d2d3e
+  type REPLCmd state =
+    REPL.REPLArguments -> state -> GHC.Types.IO state
+f1cbb0d1517ddec2d6ad332b0784d62d
+  type REPLCmdDescr state =
+    (GHC.Base.String, GHC.Base.String, GHC.Base.String,
+     REPL.REPLCmd state)
+0edbdb20dc4f04a7d42abc3187d335dd
+  type REPLCommands state = [REPL.REPLCmdDescr state]
+7a7cf4c4f6f6c00078e5a4f7561202a7
+  data REPLConfig state
+    = REPLC {replPrompt :: GHC.Types.Bool -> state -> GHC.Base.String,
+             replEOFReplacement :: [GHC.Base.String],
+             replParser :: REPL.REPLParser,
+             replQuitCmds :: [GHC.Base.String],
+             replQuit :: REPL.REPLExit state,
+             replHelpCmds :: [GHC.Base.String],
+             replCommands :: REPL.REPLCommands state,
+             replEndCondition :: state -> GHC.Types.Bool,
+             replEndTidy :: REPL.REPLCmd state}
+f4e1a400d6fdea824b6cf195ff1e4708
+  type REPLExit state =
+    REPL.REPLArguments -> state -> GHC.Types.IO (GHC.Types.Bool, state)
+ab14fc2632e8635769b83c59e173f527
+  type REPLParser = GHC.Base.String -> REPL.REPLArguments
+326c72cacd32880ac58c67c1872af8b2
+  charTypeParse :: REPL.REPLParser
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ (x :: GHC.Base.String) -> REPL.charTypeParse_go x) -}
+7a8e82920ecb51299a4f8b5f50c44f2f
+  charTypeParse_go :: [GHC.Types.Char] -> [[GHC.Types.Char]]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+48206e465299bdf07f08f6dfb6034617
+  clearLong :: REPL.REPLCmdDescr s -> REPL.REPLCmdDescr s
+  {- Arity: 1, Strictness: <S,1*U(U,U,1*U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ s
+                   (ds :: (GHC.Base.String, GHC.Base.String, GHC.Base.String,
+                           REPL.REPLCmd s)) ->
+                 case ds of wild { (,,,) nm short long func ->
+                 (nm, short, Utilities.clearIt long, func) }) -}
+ac377223cb9e186304f83d0099796192
+  idParse :: REPL.REPLParser
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: GHC.Base.String) ->
+                 GHC.Types.:
+                   @ GHC.Base.String
+                   s
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+749ee2039d868d32d41c603a957300d2
+  loopREPL ::
+    REPL.REPLConfig state
+    -> GHC.Types.Bool
+    -> state
+    -> System.Console.Haskeline.InputT.InputT GHC.Types.IO state
+  {- Arity: 3,
+     Strictness: <S(LLLLLLLC(S)L),1*U(C(C1(U)),U,C(U),U,C(C1(C1(U(U,1*U(1*U,U))))),U,U,C(U),C(C1(U)))><L,U><L,U> -}
+189d23c59b5b346adcd8b446247fa992
+  pickByNumber ::
+    GHC.Base.String
+    -> (t -> GHC.Base.String) -> t -> GHC.Types.IO GHC.Types.Int
+  {- Arity: 4, Strictness: <L,1*U><L,1*C1(U)><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                REPL.pickByNumber1
+                  `cast`
+                (forall (t :: <*>_N).
+                 <GHC.Base.String>_R
+                 ->_R <t -> GHC.Base.String>_R
+                 ->_R <t>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <GHC.Types.Int>_R)) -}
+7560c33a02e15f0636721e003838836d
+  pickByNumber1 ::
+    GHC.Base.String
+    -> (t -> GHC.Base.String)
+    -> t
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Types.Int #)
+  {- Arity: 4, Strictness: <L,1*U><L,1*C1(U)><L,U><S,U>,
+     Unfolding: (\ @ t
+                   (prompt :: GHC.Base.String)
+                   (showx :: t -> GHC.Base.String)
+                   (x :: t)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case (GHC.IO.Handle.Text.hPutStr'
+                         GHC.IO.Handle.FD.stdout
+                         (showx x)
+                         GHC.Types.True)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case (GHC.IO.Handle.Text.hPutStr'
+                         GHC.IO.Handle.FD.stdout
+                         prompt
+                         GHC.Types.False)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case GHC.IO.Handle.Internals.wantWritableHandle1
+                        @ ()
+                        GHC.IO.Handle.hFlush2
+                        GHC.IO.Handle.FD.stdout
+                        GHC.IO.Handle.Internals.flushWriteBuffer1
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle__>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case GHC.IO.Handle.Internals.wantReadableHandle_1
+                        @ GHC.Base.String
+                        GHC.IO.Handle.Text.hGetLine4
+                        GHC.IO.Handle.FD.stdin
+                        GHC.IO.Handle.Text.hGetLine2
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle__>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <GHC.Base.String>_R))
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 (# ipv6, Utilities.readInt (Utilities.trim ipv7) #) } } } }) -}
+014dd3b5f0a2ef15063e771182757ba7
+  pickPairing ::
+    GHC.Base.String
+    -> (c -> GHC.Base.String)
+    -> GHC.Base.String
+    -> (a -> GHC.Base.String)
+    -> GHC.Base.String
+    -> (b -> GHC.Base.String)
+    -> (a -> GHC.Base.String)
+    -> c
+    -> [a]
+    -> [b]
+    -> GHC.Types.IO (GHC.Types.Bool, [(a, b)])
+  {- Arity: 11,
+     Strictness: <L,1*U><L,1*C1(U)><L,1*U><L,C(U)><L,1*U><L,C(U)><L,C(U)><L,U><L,U><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                REPL.pickPairing1
+                  `cast`
+                (forall (c :: <*>_N) (a :: <*>_N) (b :: <*>_N).
+                 <GHC.Base.String>_R
+                 ->_R <c -> GHC.Base.String>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R <a -> GHC.Base.String>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R <b -> GHC.Base.String>_R
+                 ->_R <a -> GHC.Base.String>_R
+                 ->_R <c>_R
+                 ->_R <[a]>_R
+                 ->_R <[b]>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <(GHC.Types.Bool, [(a, b)])>_R)) -}
+b4eb3ba298ba58965e191b4fd53d24d2
+  pickPairing1 ::
+    GHC.Base.String
+    -> (c -> GHC.Base.String)
+    -> GHC.Base.String
+    -> (a -> GHC.Base.String)
+    -> GHC.Base.String
+    -> (b -> GHC.Base.String)
+    -> (a -> GHC.Base.String)
+    -> c
+    -> [a]
+    -> [b]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Types.Bool, [(a, b)]) #)
+  {- Arity: 11,
+     Strictness: <L,1*U><L,1*C1(U)><L,1*U><L,C(U)><L,1*U><L,C(U)><L,C(U)><L,U><L,U><L,U><S,U>,
+     Unfolding: (\ @ c
+                   @ a
+                   @ b
+                   (whatCtxt :: GHC.Base.String)
+                   (showCtxt :: c -> GHC.Base.String)
+                   (whatA :: GHC.Base.String)
+                   (showA :: a -> GHC.Base.String)
+                   (whatB :: GHC.Base.String)
+                   (showB :: b -> GHC.Base.String)
+                   (prompt :: a -> GHC.Base.String)
+                   (ctxt :: c)
+                   (as :: [a])
+                   (bs :: [b])
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case (GHC.IO.Handle.Text.hPutStr'
+                         GHC.IO.Handle.FD.stdout
+                         (GHC.Base.++ @ GHC.Types.Char whatCtxt (showCtxt ctxt))
+                         GHC.Types.True)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case (GHC.IO.Handle.Text.hPutStr'
+                         GHC.IO.Handle.FD.stdout
+                         whatA
+                         GHC.Types.False)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case REPL.pickPairing3
+                        @ a
+                        showA
+                        as
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case (GHC.IO.Handle.Text.hPutStr'
+                         GHC.IO.Handle.FD.stdout
+                         whatB
+                         GHC.Types.True)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 case (GHC.IO.Handle.Text.hPutStr'
+                         GHC.IO.Handle.FD.stdout
+                         (Utilities.numberList @ b showB bs)
+                         GHC.Types.True)
+                        `cast`
+                      (GHC.Types.N:IO[0] <()>_R)
+                        ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                 REPL.pickPairing2
+                   @ a
+                   @ b
+                   prompt
+                   (GHC.Types.[] @ (a, b))
+                   bs
+                   as
+                   ipv8 } } } } }) -}
+9a2cb68c4539159e9bc0a32d248b1e79
+  pickPairing2 ::
+    (a -> GHC.Base.String)
+    -> [(a, b)]
+    -> [b]
+    -> [a]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Types.Bool, [(a, b)]) #)
+  {- Arity: 5, Strictness: <L,C(U)><L,U><L,U><S,1*U><S,U> -}
+f7f69e9dc1457280d08312305bf12dfd
+  pickPairing3 ::
+    (t -> GHC.Base.String)
+    -> [t]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3, Strictness: <L,C(U)><S,1*U><S,U> -}
+186d9ac299050a5a4f9466f7a3857a0c
+  putListOneLine :: (t -> GHC.Base.String) -> [t] -> GHC.Types.IO ()
+  {- Arity: 3, Strictness: <L,C(U)><S,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                REPL.pickPairing3
+                  `cast`
+                (forall (t :: <*>_N).
+                 <t -> GHC.Base.String>_R
+                 ->_R <[t]>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+7a7cf4c4f6f6c00078e5a4f7561202a7
+  replCommands :: REPL.REPLConfig state -> REPL.REPLCommands state
+  RecSel Left REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLSLL),1*U(A,A,A,A,A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state (ds :: REPL.REPLConfig state) ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds7 }) -}
+7a7cf4c4f6f6c00078e5a4f7561202a7
+  replEOFReplacement :: REPL.REPLConfig state -> [GHC.Base.String]
+  RecSel Left REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLLLLL),1*U(A,1*U,A,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state (ds :: REPL.REPLConfig state) ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds2 }) -}
+7a7cf4c4f6f6c00078e5a4f7561202a7
+  replEndCondition ::
+    REPL.REPLConfig state -> state -> GHC.Types.Bool
+  RecSel Left REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLSL),1*U(A,A,A,A,A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state (ds :: REPL.REPLConfig state) ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds8 }) -}
+7a7cf4c4f6f6c00078e5a4f7561202a7
+  replEndTidy :: REPL.REPLConfig state -> REPL.REPLCmd state
+  RecSel Left REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLS),1*U(A,A,A,A,A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state (ds :: REPL.REPLConfig state) ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds9 }) -}
+7a7cf4c4f6f6c00078e5a4f7561202a7
+  replHelpCmds :: REPL.REPLConfig state -> [GHC.Base.String]
+  RecSel Left REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLSLLL),1*U(A,A,A,A,A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state (ds :: REPL.REPLConfig state) ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds6 }) -}
+7a7cf4c4f6f6c00078e5a4f7561202a7
+  replParser :: REPL.REPLConfig state -> REPL.REPLParser
+  RecSel Left REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLLLLL),1*U(A,A,1*U,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state (ds :: REPL.REPLConfig state) ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds3 }) -}
+7a7cf4c4f6f6c00078e5a4f7561202a7
+  replPrompt ::
+    REPL.REPLConfig state -> GHC.Types.Bool -> state -> GHC.Base.String
+  RecSel Left REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLLLLL),1*U(1*U,A,A,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state (ds :: REPL.REPLConfig state) ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds1 }) -}
+7a7cf4c4f6f6c00078e5a4f7561202a7
+  replQuit :: REPL.REPLConfig state -> REPL.REPLExit state
+  RecSel Left REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSLLLL),1*U(A,A,A,A,1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state (ds :: REPL.REPLConfig state) ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds5 }) -}
+7a7cf4c4f6f6c00078e5a4f7561202a7
+  replQuitCmds :: REPL.REPLConfig state -> [GHC.Base.String]
+  RecSel Left REPL.REPLConfig
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLLLLL),1*U(A,A,A,1*U,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ state (ds :: REPL.REPLConfig state) ->
+                 case ds of wild { REPL.REPLC ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                 ds4 }) -}
+f5885efc466992dfe4b6db279b9278a1
+  runREPL ::
+    GHC.Base.String
+    -> REPL.REPLConfig state -> state -> GHC.Types.IO state
+  {- Arity: 3,
+     Strictness: <L,1*U><L,1*U(C(C1(U)),U,C(U),U,C(C1(C1(U(U,1*U(1*U,U))))),U,U,C(U),C(C1(U)))><L,U>,
+     Unfolding: (\ @ state
+                   (wlcm :: GHC.Base.String)
+                   (config :: REPL.REPLConfig state)
+                   (s0 :: state) ->
+                 System.Console.Haskeline.InputT.$wrunInputTBehavior
+                   @ GHC.Types.IO
+                   @ state
+                   Control.Monad.IO.Class.$fMonadIOIO
+                   System.Console.Haskeline.MonadException.$fMonadExceptionIO1
+                     `cast`
+                   (forall (a :: <*>_N).
+                    <System.Console.Haskeline.MonadException.RunIO GHC.Types.IO
+                     -> GHC.Types.IO (GHC.Types.IO a)>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <a>_R))
+                   System.Console.Haskeline.Backend.defaultRunTerm1
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <System.Console.Haskeline.Term.RunTerm>_R))
+                   REPL.runREPL1
+                   (let {
+                      u :: [GHC.Types.Char]
+                      = GHC.Base.++
+                          @ GHC.Types.Char
+                          wlcm
+                          System.Console.Haskeline.outputStrLn2
+                    } in
+                    let {
+                      v :: System.Console.Haskeline.InputT.InputT GHC.Types.IO state
+                      = REPL.loopREPL @ state config GHC.Types.True s0
+                    } in
+                    (\ (r1 :: System.Console.Haskeline.Term.RunTerm) ->
+                     let {
+                       u1 :: Control.Monad.Trans.Reader.ReaderT
+                               (GHC.IORef.IORef System.Console.Haskeline.History.History)
+                               (Control.Monad.Trans.Reader.ReaderT
+                                  (GHC.IORef.IORef
+                                     System.Console.Haskeline.Command.KillRing.KillRing)
+                                  (Control.Monad.Trans.Reader.ReaderT
+                                     System.Console.Haskeline.Prefs.Prefs
+                                     (Control.Monad.Trans.Reader.ReaderT
+                                        (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                                        GHC.Types.IO)))
+                               ()
+                       = System.Console.Haskeline.outputStr1
+                           @ GHC.Types.IO
+                           Control.Monad.IO.Class.$fMonadIOIO
+                           u
+                           r1
+                     } in
+                     let {
+                       v1 :: Control.Monad.Trans.Reader.ReaderT
+                               (GHC.IORef.IORef System.Console.Haskeline.History.History)
+                               (Control.Monad.Trans.Reader.ReaderT
+                                  (GHC.IORef.IORef
+                                     System.Console.Haskeline.Command.KillRing.KillRing)
+                                  (Control.Monad.Trans.Reader.ReaderT
+                                     System.Console.Haskeline.Prefs.Prefs
+                                     (Control.Monad.Trans.Reader.ReaderT
+                                        (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                                        GHC.Types.IO)))
+                               state
+                       = v `cast`
+                         (System.Console.Haskeline.InputT.N:InputT[0]
+                              <GHC.Types.IO>_R <state>_N ; Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                               <System.Console.Haskeline.Term.RunTerm>_R
+                                                               <Control.Monad.Trans.Reader.ReaderT
+                                                                  (GHC.IORef.IORef
+                                                                     System.Console.Haskeline.History.History)
+                                                                  (Control.Monad.Trans.Reader.ReaderT
+                                                                     (GHC.IORef.IORef
+                                                                        System.Console.Haskeline.Command.KillRing.KillRing)
+                                                                     (Control.Monad.Trans.Reader.ReaderT
+                                                                        System.Console.Haskeline.Prefs.Prefs
+                                                                        (Control.Monad.Trans.Reader.ReaderT
+                                                                           (System.Console.Haskeline.InputT.Settings
+                                                                              GHC.Types.IO)
+                                                                           GHC.Types.IO)))>_R
+                                                               <state>_N)
+                           r1
+                     } in
+                     (\ (r2 :: GHC.IORef.IORef System.Console.Haskeline.History.History)
+                        (r3 :: GHC.IORef.IORef
+                                 System.Console.Haskeline.Command.KillRing.KillRing)[OneShot]
+                        (r4 :: System.Console.Haskeline.Prefs.Prefs)[OneShot]
+                        (r5 :: System.Console.Haskeline.InputT.Settings
+                                 GHC.Types.IO)[OneShot]
+                        (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                      case ((((u1
+                                 `cast`
+                               (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                    <GHC.IORef.IORef System.Console.Haskeline.History.History>_R
+                                    <Control.Monad.Trans.Reader.ReaderT
+                                       (GHC.IORef.IORef
+                                          System.Console.Haskeline.Command.KillRing.KillRing)
+                                       (Control.Monad.Trans.Reader.ReaderT
+                                          System.Console.Haskeline.Prefs.Prefs
+                                          (Control.Monad.Trans.Reader.ReaderT
+                                             (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                                             GHC.Types.IO))>_R
+                                    <()>_N)
+                                 r2)
+                                `cast`
+                              (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                   <GHC.IORef.IORef
+                                      System.Console.Haskeline.Command.KillRing.KillRing>_R
+                                   <Control.Monad.Trans.Reader.ReaderT
+                                      System.Console.Haskeline.Prefs.Prefs
+                                      (Control.Monad.Trans.Reader.ReaderT
+                                         (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                                         GHC.Types.IO)>_R
+                                   <()>_N)
+                                r3)
+                               `cast`
+                             (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                  <System.Console.Haskeline.Prefs.Prefs>_R
+                                  <Control.Monad.Trans.Reader.ReaderT
+                                     (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                                     GHC.Types.IO>_R
+                                  <()>_N)
+                               r4)
+                              `cast`
+                            (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                 <System.Console.Haskeline.InputT.Settings GHC.Types.IO>_R
+                                 <GHC.Types.IO>_R
+                                 <()>_N)
+                              r5)
+                             `cast`
+                           (GHC.Types.N:IO[0] <()>_R)
+                             s of ds1 { (#,#) ipv ipv1 ->
+                      ((((v1
+                            `cast`
+                          (Control.Monad.Trans.Reader.N:ReaderT[0]
+                               <GHC.IORef.IORef System.Console.Haskeline.History.History>_R
+                               <Control.Monad.Trans.Reader.ReaderT
+                                  (GHC.IORef.IORef
+                                     System.Console.Haskeline.Command.KillRing.KillRing)
+                                  (Control.Monad.Trans.Reader.ReaderT
+                                     System.Console.Haskeline.Prefs.Prefs
+                                     (Control.Monad.Trans.Reader.ReaderT
+                                        (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                                        GHC.Types.IO))>_R
+                               <state>_N)
+                            r2)
+                           `cast`
+                         (Control.Monad.Trans.Reader.N:ReaderT[0]
+                              <GHC.IORef.IORef
+                                 System.Console.Haskeline.Command.KillRing.KillRing>_R
+                              <Control.Monad.Trans.Reader.ReaderT
+                                 System.Console.Haskeline.Prefs.Prefs
+                                 (Control.Monad.Trans.Reader.ReaderT
+                                    (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                                    GHC.Types.IO)>_R
+                              <state>_N)
+                           r3)
+                          `cast`
+                        (Control.Monad.Trans.Reader.N:ReaderT[0]
+                             <System.Console.Haskeline.Prefs.Prefs>_R
+                             <Control.Monad.Trans.Reader.ReaderT
+                                (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                                GHC.Types.IO>_R
+                             <state>_N)
+                          r4)
+                         `cast`
+                       (Control.Monad.Trans.Reader.N:ReaderT[0]
+                            <System.Console.Haskeline.InputT.Settings GHC.Types.IO>_R
+                            <GHC.Types.IO>_R
+                            <state>_N)
+                         r5)
+                        `cast`
+                      (GHC.Types.N:IO[0] <state>_R)
+                        ipv })
+                       `cast`
+                     ((<GHC.IORef.IORef System.Console.Haskeline.History.History>_R
+                       ->_R (<GHC.IORef.IORef
+                                System.Console.Haskeline.Command.KillRing.KillRing>_R
+                             ->_R (<System.Console.Haskeline.Prefs.Prefs>_R
+                                   ->_R (<System.Console.Haskeline.InputT.Settings GHC.Types.IO>_R
+                                         ->_R Sym (GHC.Types.N:IO[0]
+                                                       <state>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                              <System.Console.Haskeline.InputT.Settings
+                                                                                 GHC.Types.IO>_R
+                                                                              <GHC.Types.IO>_R
+                                                                              <state>_N)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                     <System.Console.Haskeline.Prefs.Prefs>_R
+                                                                                                     <Control.Monad.Trans.Reader.ReaderT
+                                                                                                        (System.Console.Haskeline.InputT.Settings
+                                                                                                           GHC.Types.IO)
+                                                                                                        GHC.Types.IO>_R
+                                                                                                     <state>_N)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                                            <GHC.IORef.IORef
+                                                                                                                               System.Console.Haskeline.Command.KillRing.KillRing>_R
+                                                                                                                            <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                               System.Console.Haskeline.Prefs.Prefs
+                                                                                                                               (Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                  (System.Console.Haskeline.InputT.Settings
+                                                                                                                                     GHC.Types.IO)
+                                                                                                                                  GHC.Types.IO)>_R
+                                                                                                                            <state>_N)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                                                                   <GHC.IORef.IORef
+                                                                                                                                                      System.Console.Haskeline.History.History>_R
+                                                                                                                                                   <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                                      (GHC.IORef.IORef
+                                                                                                                                                         System.Console.Haskeline.Command.KillRing.KillRing)
+                                                                                                                                                      (Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                                         System.Console.Haskeline.Prefs.Prefs
+                                                                                                                                                         (Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                                            (System.Console.Haskeline.InputT.Settings
+                                                                                                                                                               GHC.Types.IO)
+                                                                                                                                                            GHC.Types.IO))>_R
+                                                                                                                                                   <state>_N)))
+                      `cast`
+                    (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                              <System.Console.Haskeline.Term.RunTerm>_R
+                              <Control.Monad.Trans.Reader.ReaderT
+                                 (GHC.IORef.IORef System.Console.Haskeline.History.History)
+                                 (Control.Monad.Trans.Reader.ReaderT
+                                    (GHC.IORef.IORef
+                                       System.Console.Haskeline.Command.KillRing.KillRing)
+                                    (Control.Monad.Trans.Reader.ReaderT
+                                       System.Console.Haskeline.Prefs.Prefs
+                                       (Control.Monad.Trans.Reader.ReaderT
+                                          (System.Console.Haskeline.InputT.Settings GHC.Types.IO)
+                                          GHC.Types.IO)))>_R
+                              <state>_N) ; Sym (System.Console.Haskeline.InputT.N:InputT[0]
+                                                    <GHC.Types.IO>_R) <state>_N))) -}
+37cefc2037bf44c6cc320d48eb30af9a
+  runREPL1 :: System.Console.Haskeline.InputT.Settings GHC.Types.IO
+  {- Strictness: m,
+     Unfolding: (System.Console.Haskeline.InputT.Settings
+                   @ GHC.Types.IO
+                   REPL.$scompleteFilename
+                   (GHC.Maybe.Nothing @ GHC.IO.FilePath)
+                   GHC.Types.True) -}
+b85abf5038f638f940d2c4d951dbe915
+  selectPairings ::
+    (a -> GHC.Base.String)
+    -> [(a, b)]
+    -> [b]
+    -> [a]
+    -> GHC.Types.IO (GHC.Types.Bool, [(a, b)])
+  {- Arity: 5, Strictness: <L,C(U)><L,U><L,U><S,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                REPL.pickPairing2
+                  `cast`
+                (forall (a :: <*>_N) (b :: <*>_N).
+                 <a -> GHC.Base.String>_R
+                 ->_R <[(a, b)]>_R
+                 ->_R <[b]>_R
+                 ->_R <[a]>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <(GHC.Types.Bool, [(a, b)])>_R)) -}
+3a7c8fdf9ea2a9b6d6f99ab72826e8b0
+  wordParse :: REPL.REPLParser
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True) Data.OldList.words -}
+"SPEC/REPL completeFilename @ IO" [orphan] [2] forall (w :: Control.Monad.IO.Class.MonadIO
+                                                              GHC.Types.IO)
+  System.Console.Haskeline.Completion.completeFilename @ GHC.Types.IO
+                                                       w
+  = REPL.$scompleteFilename
+trusted: none
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+

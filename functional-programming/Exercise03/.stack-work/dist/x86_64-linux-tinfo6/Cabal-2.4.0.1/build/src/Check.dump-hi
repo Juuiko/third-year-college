@@ -1,0 +1,394 @@
+
+==================== FINAL INTERFACE ====================
+2020-12-18 12:29:36.517459166 UTC
+
+interface prfchk-0.9.2.0-KV9VXCJ2aMmB0dkHlBTwZT:Check 8064
+  interface hash: 79ed935c2f4e5be4e7e25086f2336ee9
+  ABI hash: afd746c899d101a3df1e9ec806a72446
+  export-list hash: 42b0a7dc11ae4fa0d045caab37f51429
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: b6427d8aeb77a442ff3ccc1f154c876f
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Check.checkTheorem
+  Check.showReport
+  Check.Report
+module dependencies: AST HParse Matching Theory Utilities
+package dependencies: array-0.5.3.0 base-4.12.0.0
+                      containers-0.6.0.1 deepseq-1.4.4.0 ghc-prim-0.5.3
+                      haskell-src-1.0.3.0 integer-gmp-1.0.2.0 pretty-1.1.3.6 syb-0.7
+orphans: syb-0.7:Data.Generics.Instances base-4.12.0.0:GHC.Float
+         base-4.12.0.0:GHC.Base
+family instance modules: base-4.12.0.0:Control.Applicative
+                         base-4.12.0.0:Data.Complex base-4.12.0.0:Data.Functor.Compose
+                         base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity
+                         base-4.12.0.0:Data.Functor.Product base-4.12.0.0:Data.Functor.Sum
+                         base-4.12.0.0:Data.Monoid base-4.12.0.0:Data.Semigroup
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:Data.Version
+                         base-4.12.0.0:Data.Void base-4.12.0.0:GHC.Exts
+                         base-4.12.0.0:GHC.Generics base-4.12.0.0:GHC.IO.Exception
+                         containers-0.6.0.1:Data.Map.Internal
+                         containers-0.6.0.1:Data.Set.Internal
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+import  -/  base-4.12.0.0:Data.Foldable 5f70351366640f007be66681d2212df8
+import  -/  base-4.12.0.0:Data.OldList e931cf456dc87f11ee6e6fb153bca23e
+import  -/  base-4.12.0.0:Data.Tuple c719fc29608fe81c10bee9a1bf1e05ff
+import  -/  base-4.12.0.0:Debug.Trace 60f75ad789dcddb29321db1cb21ccd4c
+import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
+import  -/  base-4.12.0.0:GHC.Err ea5e313ef4146b40b5d8b27aa168e736
+import  -/  base-4.12.0.0:GHC.List 4014a3c8a3b7c31c8325f6bcf1feea4a
+import  -/  base-4.12.0.0:GHC.Num c2039f03637c68f47b0bbff4c18ec616
+import  -/  base-4.12.0.0:GHC.Show 838a5d039379d82d9626aae53dfce276
+import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
+import  -/  base-4.12.0.0:System.IO dd4f3cfe73b94b7cae46a4ca98a3f09f
+import  -/  ghc-prim-0.5.3:GHC.Classes 0f6fd7d7db53fc48f6e1f01803cc6c9d
+import  -/  AST a19320deb4b3079c9f8c99c1c1d40e5c
+  exports: 080ccb161aeb5bcb1edb5f9f2671c82f
+  App a5a590a9e2fe916eab81ee2b8d762e4f
+  Bind aebca814cdd7eb0add4c16054e9ba6d5
+  Cons 53f9b6ad03587b2c11ef0b56c793256a
+  Decl 3ed9b93867c4c432cae27f1e188273ac
+  Equal 42694198756cc38dc2c2121ab9bcfbbb
+  Expr 3ed9b93867c4c432cae27f1e188273ac
+  Fun 9195df39c0e550fdec0bc6f119c3fe20
+  GrdExpr e330b088a8cae7bc97b8c152be05cacd
+  If 45e8e56b5a199352aad068285a6ea1d2
+  InfixApp 469654dfa8cd7631a0cc0c7fc06edb5a
+  LBool 6d0d4ea740c8d556e6ac32f5bc12c16c
+  LChar d334c14054d2ed457aa9567498645860
+  LInt 9ede6173e488c430886631f93d57ccfa
+  Let 7090cf8e3b48b52cddaa1de0fa4e9388
+  Mdl 9c3ea1c5ca1e8cfccd40a4ed18ba025c
+  PApp df36ec8ec155509b18c4a38d77195507
+  Var 483fe2c32c232140904148fdff84c3cc
+  eEq f7d5497a0d0eeab9e2afd52bd9ef4875
+  fname 3ed9b93867c4c432cae27f1e188273ac
+  ldecls 3ed9b93867c4c432cae27f1e188273ac
+  lhspat 3ed9b93867c4c432cae27f1e188273ac
+  rhs 3ed9b93867c4c432cae27f1e188273ac
+  topdecls 9c3ea1c5ca1e8cfccd40a4ed18ba025c
+import  -/  Matching 2f48940456049d30cde3748d681dba60
+  exports: 9dd9af044be1a90b419e5adfe271a7bd
+  buildReplacement 91efe547ca97862db93626a7ef6932ee
+  eMatch 5159050c6dac0faf7f785f886b2bff5e
+import  -/  Theory 5520e0a55ef8a3e14249f299d1956328
+  exports: 42cc8845ad5fc642cfba40cb23c12c62
+  At 4af3e80e28ccb03504442eab5f028bde
+  BECAUSE ef94bded5823efa1be4d15f583286768
+  CALC a2e875e2b00710e75217fa9c862ecb77
+  Calculation b98b7322e1cd7838b03adb309a1bb62b
+  D e585bbefd394a3fa3af5f2f1e159c6e9
+  Focus 03f2f063c6a65d3eeac67b6aba3a56aa
+  IH b7f6a84e6ae6aa00dea5bd5836d2dbd5
+  Justification 0e375e87a8dd108048468234d72c723e
+  L 4125365a8bcfb83a184ef915faad975e
+  L2R 6d3140c581476fed225bdc10f75debda
+  LAW a5011d945d424d291c6671eebf427758
+  Law 618080bb28ced03f44d6c5b173008211
+  R2L bbe1662893179f6e256e1807dbaaecb9
+  ReduceAll 0058055fce36021c1b4a4709e7789abb
+  ReduceBoth 12cd73d04e52e649b9f2729bfedd1d1c
+  ReduceLHS f45e18cb580ba885641b39340c1536c8
+  ReduceRHS 0236467dcc455928ec49940d2b8db81f
+  SMP 13bfcb900930b1a45fe7d9194df60a3d
+  Strategy d39c74b125f144b7dadd9cab05ac747a
+  Theorem 387ff647eb372ac9a66f2dbd06ae38af
+  Theory c73a1345c0d50bfab9fdab67761b2c5f
+  Top 679ee6148c952de9d8fe492d7ca5b007
+  Usage cf5f2de10fd64df1af4e42c74d7b8b01
+  Whole 4ed8a0eaf3f18e9939e45dba03b75355
+  assume d39c74b125f144b7dadd9cab05ac747a
+  bGoal d39c74b125f144b7dadd9cab05ac747a
+  baseStrategy d39c74b125f144b7dadd9cab05ac747a
+  iGoal d39c74b125f144b7dadd9cab05ac747a
+  iVar d39c74b125f144b7dadd9cab05ac747a
+  indType 7ce289e9d5c407c226a02cc853444c38
+  lawEqn 618080bb28ced03f44d6c5b173008211
+  lawName 618080bb28ced03f44d6c5b173008211
+  stepStrategy d39c74b125f144b7dadd9cab05ac747a
+  strategy 387ff647eb372ac9a66f2dbd06ae38af
+  thIndScheme c73a1345c0d50bfab9fdab67761b2c5f
+  thLaws c73a1345c0d50bfab9fdab67761b2c5f
+  theorem 387ff647eb372ac9a66f2dbd06ae38af
+  thmName 387ff647eb372ac9a66f2dbd06ae38af
+2f878eda8ba933fe73c1758cb320c496
+  $fEqExprBranches :: GHC.Classes.Eq Check.ExprBranches
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Check.ExprBranches
+                  Check.$fEqExprBranches_$c==
+                  Check.$fEqExprBranches_$c/= -}
+2f878eda8ba933fe73c1758cb320c496
+  $fEqExprBranches_$c/= ::
+    Check.ExprBranches -> Check.ExprBranches -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Check.ExprBranches) (y :: Check.ExprBranches) ->
+                 case x of wild {
+                   Check.AppB
+                   -> case y of wild1 {
+                        Check.AppB -> GHC.Types.False Check.OtherB -> GHC.Types.True }
+                   Check.OtherB
+                   -> case y of wild1 {
+                        Check.AppB -> GHC.Types.True
+                        Check.OtherB -> GHC.Types.False } }) -}
+2f878eda8ba933fe73c1758cb320c496
+  $fEqExprBranches_$c== ::
+    Check.ExprBranches -> Check.ExprBranches -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Check.ExprBranches) (ds1 :: Check.ExprBranches) ->
+                 case ds of wild {
+                   Check.AppB
+                   -> case ds1 of wild1 {
+                        Check.AppB -> GHC.Types.True Check.OtherB -> GHC.Types.False }
+                   Check.OtherB
+                   -> case ds1 of wild1 {
+                        Check.AppB -> GHC.Types.False
+                        Check.OtherB -> GHC.Types.True } }) -}
+2f878eda8ba933fe73c1758cb320c496
+  $fShowExprBranches :: GHC.Show.Show Check.ExprBranches
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Check.ExprBranches
+                  Check.$fShowExprBranches_$cshowsPrec
+                  Check.$fShowExprBranches_$cshow
+                  Check.$fShowExprBranches_$cshowList -}
+2f878eda8ba933fe73c1758cb320c496
+  $fShowExprBranches1 :: Check.ExprBranches -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Check.ExprBranches) (eta :: GHC.Base.String) ->
+                 case ds of wild {
+                   Check.AppB
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b
+                           (c :: GHC.Types.Char -> b -> b)[OneShot]
+                           (n :: b)[OneShot] ->
+                         GHC.Base.foldr @ GHC.Types.Char @ b c n Check.$fShowExprBranches4)
+                        eta
+                   Check.OtherB
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b
+                           (c :: GHC.Types.Char -> b -> b)[OneShot]
+                           (n :: b)[OneShot] ->
+                         GHC.Base.foldr @ GHC.Types.Char @ b c n Check.$fShowExprBranches2)
+                        eta }) -}
+69d92e15a6a8e893fc34fb10b26e79ff
+  $fShowExprBranches2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Check.$fShowExprBranches3) -}
+71c30fa87862a9c892bc64657ad4686e
+  $fShowExprBranches3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("OtherB"#) -}
+0f74c8a51749d740422ce20ad9c8b95e
+  $fShowExprBranches4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   Check.$fShowExprBranches5) -}
+e7fad2476a97152a1f7945878f9122fc
+  $fShowExprBranches5 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("AppB"#) -}
+2f878eda8ba933fe73c1758cb320c496
+  $fShowExprBranches_$cshow :: Check.ExprBranches -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Check.ExprBranches) ->
+                 case x of wild {
+                   Check.AppB -> Check.$fShowExprBranches4
+                   Check.OtherB -> Check.$fShowExprBranches2 }) -}
+2f878eda8ba933fe73c1758cb320c496
+  $fShowExprBranches_$cshowList ::
+    [Check.ExprBranches] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Check.ExprBranches]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ Check.ExprBranches
+                   Check.$fShowExprBranches1
+                   ls
+                   s) -}
+2f878eda8ba933fe73c1758cb320c496
+  $fShowExprBranches_$cshowsPrec ::
+    GHC.Types.Int -> Check.ExprBranches -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (ds :: GHC.Types.Int)
+                   (ds1 :: Check.ExprBranches)
+                   (eta :: GHC.Base.String) ->
+                 case ds1 of wild {
+                   Check.AppB
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b
+                           (c :: GHC.Types.Char -> b -> b)[OneShot]
+                           (n :: b)[OneShot] ->
+                         GHC.Base.foldr @ GHC.Types.Char @ b c n Check.$fShowExprBranches4)
+                        eta
+                   Check.OtherB
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b
+                           (c :: GHC.Types.Char -> b -> b)[OneShot]
+                           (n :: b)[OneShot] ->
+                         GHC.Base.foldr @ GHC.Types.Char @ b c n Check.$fShowExprBranches2)
+                        eta }) -}
+906125f2ca5a544dea15c0493758c407
+  $tc'AppB :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16126167324483461804##
+                   8204021593718625935##
+                   Check.$trModule
+                   Check.$tc'AppB2
+                   0#
+                   Check.$tc'AppB1) -}
+e020592b248bfe57285370813932a62f
+  $tc'AppB1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+5795faecd0ec5e1d8e2f3c9b0b5cc9b3
+  $tc'AppB2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Check.$tc'AppB3) -}
+e9e1d94b937ad428f346465282d04edd
+  $tc'AppB3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'AppB"#) -}
+b5877770f25b70f919e733350fabda8b
+  $tc'OtherB :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3836729601093878302##
+                   18315822099396738332##
+                   Check.$trModule
+                   Check.$tc'OtherB1
+                   0#
+                   Check.$tc'AppB1) -}
+cd6bffc840354d584bd9679b65b62cf8
+  $tc'OtherB1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Check.$tc'OtherB2) -}
+fb492720d224923f3c92b6807a5639f5
+  $tc'OtherB2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'OtherB"#) -}
+748c3f8603b5f7534625437b06f9cf14
+  $tcExprBranches :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2057403888550208720##
+                   5446322614624043634##
+                   Check.$trModule
+                   Check.$tcExprBranches1
+                   0#
+                   GHC.Types.krep$*) -}
+08cbbbb48844874748f1afed4a36238c
+  $tcExprBranches1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Check.$tcExprBranches2) -}
+06999ccd2c183e12baa2f3637366c188
+  $tcExprBranches2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("ExprBranches"#) -}
+9221cc82f150987e9a204c78d3d90007
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Check.$trModule3 Check.$trModule1) -}
+f7b9efd872fa1930b825cf3d1257f3b4
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Check.$trModule2) -}
+393f6d1ae3e9380233a456bba1b94300
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Check"#) -}
+223e33c599084c39a89ec13df09144d3
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Check.$trModule4) -}
+e1ffa83f20036b095e4fb941b956b7b7
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("prfchk-0.9.2.0-KV9VXCJ2aMmB0dkHlBTwZT"#) -}
+fdab8f953f8bafa905764d38c84e85b7
+  type Branch = (GHC.Types.Int, Check.ExprBranches)
+e70785d5fd8a5d6938f997e43b93aba5
+  type Definition = (AST.Expr, AST.Expr, [AST.Decl])
+2f878eda8ba933fe73c1758cb320c496
+  data ExprBranches = AppB | OtherB
+6d4dbd924229c4108aba179a47c4aa79
+  type Path = [Check.Branch]
+aff67f28f6b0d53e71e31f446bb36162
+  type Report = [GHC.Base.String]
+1c0bd3d75fb6f55b5cf0c8a3ce4b3c7c
+  checkStrategy ::
+    [AST.Mdl]
+    -> [Theory.Theory]
+    -> AST.Expr
+    -> AST.Expr
+    -> Theory.Strategy
+    -> Check.Report
+  {- Arity: 5, Strictness: <L,U><L,U><L,U><L,U><S,1*U> -}
+9c68ded518ad644a4c6cac599162cde4
+  checkTheorem ::
+    [AST.Mdl] -> [Theory.Theory] -> Theory.Theorem -> Check.Report
+  {- Arity: 3, Strictness: <L,U><L,U><L,U(1*U,U,1*U)>,
+     Unfolding: (\ (mdls :: [AST.Mdl])
+                   (thrys :: [Theory.Theory])
+                   (thm :: Theory.Theorem) ->
+                 GHC.Base.++
+                   @ [GHC.Types.Char]
+                   (Data.OldList.lines
+                      (GHC.CString.unpackAppendCString#
+                         Check.checkTheorem5
+                         (case thm of wild { Theory.THEOREM ds1 ds2 ds3 ->
+                          GHC.Base.++ @ GHC.Types.Char ds1 Check.checkTheorem3 })))
+                   (case thm of wild { Theory.THEOREM ds1 ds2 ds3 ->
+                    Check.checkStrategy mdls thrys Check.dummyH ds2 ds3 })) -}
+8ccf6741aefb3a3f7ec982f6a59dfb92
+  checkTheorem1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Check.checkTheorem2) -}
+c1f656a62f5a5608e9b8d4ebff048d9f
+  checkTheorem2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("??"#) -}
+85c16d5d15e1d6c6b697786d9f52c38e
+  checkTheorem3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Check.checkTheorem4) -}
+1c5b8d21ff86eac8426d2834bc72055b
+  checkTheorem4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'"#) -}
+626b6755c266fcf4b93b56e718077da3
+  checkTheorem5 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("\n\
+                 \Checking theorem '"#) -}
+8b9482d81ed53809c06bf8938a02ac9a
+  dummyH :: AST.Expr
+  {- Strictness: m4, Unfolding: (AST.Var Check.checkTheorem1) -}
+1c1f620fb3688d38d32ae90c3a0c5192
+  showReport :: [GHC.Base.String] -> GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (rep :: [GHC.Base.String]) ->
+                 GHC.IO.Handle.Text.hPutStr'
+                   GHC.IO.Handle.FD.stdout
+                   (Data.OldList.unlines rep)
+                   GHC.Types.True) -}
+instance GHC.Classes.Eq [Check.ExprBranches]
+  = Check.$fEqExprBranches
+instance GHC.Show.Show [Check.ExprBranches]
+  = Check.$fShowExprBranches
+trusted: none
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+

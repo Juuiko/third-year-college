@@ -1,0 +1,721 @@
+
+==================== FINAL INTERFACE ====================
+2020-12-18 12:29:34.177338289 UTC
+
+interface prfchk-0.9.2.0-KV9VXCJ2aMmB0dkHlBTwZT:HParse 8064
+  interface hash: f9025e562772f1de421f4dfd92b45029
+  ABI hash: c10e1d933e8f7c338bde4f3cda916758
+  export-list hash: b41b44bef8e5bfeda45e0de6d189da82
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: b6427d8aeb77a442ff3ccc1f154c876f
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  HParse.hParseE
+  HParse.hs42
+  HParse.pFail
+  HParse.parseEqual
+  HParse.parseExpr
+  HParse.parseHModule
+  Language.Haskell.ParseMonad.ParseMode{Language.Haskell.ParseMonad.ParseMode parseFilename}
+  Language.Haskell.ParseMonad.ParseResult{Language.Haskell.ParseMonad.ParseFailed Language.Haskell.ParseMonad.ParseOk}
+  Language.Haskell.Syntax.SrcLoc{Language.Haskell.Syntax.SrcLoc srcColumn srcFilename srcLine}
+  HParse.Line
+  HParse.Lines
+  HParse.Parser
+module dependencies: AST Utilities
+package dependencies: array-0.5.3.0 base-4.12.0.0
+                      containers-0.6.0.1 deepseq-1.4.4.0 ghc-prim-0.5.3
+                      haskell-src-1.0.3.0 integer-gmp-1.0.2.0 pretty-1.1.3.6 syb-0.7
+orphans: syb-0.7:Data.Generics.Instances base-4.12.0.0:GHC.Float
+         base-4.12.0.0:GHC.Base
+family instance modules: base-4.12.0.0:Control.Applicative
+                         base-4.12.0.0:Data.Complex base-4.12.0.0:Data.Functor.Compose
+                         base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity
+                         base-4.12.0.0:Data.Functor.Product base-4.12.0.0:Data.Functor.Sum
+                         base-4.12.0.0:Data.Monoid base-4.12.0.0:Data.Semigroup
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:Data.Version
+                         base-4.12.0.0:Data.Void base-4.12.0.0:GHC.Exts
+                         base-4.12.0.0:GHC.Generics base-4.12.0.0:GHC.IO.Exception
+                         containers-0.6.0.1:Data.Map.Internal
+                         containers-0.6.0.1:Data.Set.Internal
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+import  -/  base-4.12.0.0:Control.Monad.Fail e3390d20cbc1146ebe051d327f964e5d
+import  -/  base-4.12.0.0:Data.Char 74f67fe9150a102afa18766e840f6832
+import  -/  base-4.12.0.0:Data.OldList e931cf456dc87f11ee6e6fb153bca23e
+import  -/  base-4.12.0.0:Data.Tuple c719fc29608fe81c10bee9a1bf1e05ff
+import  -/  base-4.12.0.0:Debug.Trace 60f75ad789dcddb29321db1cb21ccd4c
+import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
+import  -/  base-4.12.0.0:GHC.Show 838a5d039379d82d9626aae53dfce276
+import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
+import  -/  containers-0.6.0.1:Data.Map d8ba04987faf51abc62bd892a8e4aa44
+import  -/  haskell-src-1.0.3.0:Language.Haskell.ParseMonad 32b8e5de1fd57c9f4c20616c13e15651
+import  -/  haskell-src-1.0.3.0:Language.Haskell.Parser ae3fd239bc9af6da77c68ffd0c813252
+import  -/  haskell-src-1.0.3.0:Language.Haskell.Pretty acd7de8506d7339f4ac6ecb94742cf10
+import  -/  haskell-src-1.0.3.0:Language.Haskell.Syntax b8aa8fb8e8938be9e80f47a4b342a080
+import  -/  AST a19320deb4b3079c9f8c99c1c1d40e5c
+  exports: 080ccb161aeb5bcb1edb5f9f2671c82f
+  Expr 3ed9b93867c4c432cae27f1e188273ac
+  LInt 9ede6173e488c430886631f93d57ccfa
+  Mdl 9c3ea1c5ca1e8cfccd40a4ed18ba025c
+  hsExp2Expr c193d013b0f25c7453bff9a67d76b947
+  hsModule2Mdl f0098e17ba3f7dfbb98fc41fa9a1fe5f
+  preludeFixTab eb1c5600f3d6f5541a8159948f48f0e7
+import  -/  Utilities a85badecc7aa0b805e79b92bddf5af71
+  exports: 35137128ec10d5d96582b028793d643a
+505de016cb8b2827549f928f207f86bf
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   HParse.$trModule3
+                   HParse.$trModule1) -}
+52ddc3c80e26c54b16628305d455f4c4
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS HParse.$trModule2) -}
+7e07d1f7720e5db476f10597aaba109d
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("HParse"#) -}
+765ab6ea52cdfe09c5feeffec1815614
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS HParse.$trModule4) -}
+4873b325047876c96469879c78495f54
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("prfchk-0.9.2.0-KV9VXCJ2aMmB0dkHlBTwZT"#) -}
+c8eeac3f7b415e752867ac25d8536030
+  $whParseE ::
+    Control.Monad.Fail.MonadFail m =>
+    Language.Haskell.ParseMonad.ParseMode
+    -> HParse.Lines
+    -> HParse.Lines
+    -> m (Language.Haskell.Syntax.HsExp, HParse.Lines)
+  {- Arity: 4,
+     Strictness: <S,U(1*U(A,1*C1(C1(U)),A,C(U),A),1*C1(U))><L,U(U)><L,U><S,1*U>,
+     Inline: [2],
+     Unfolding: (\ @ m :: * -> *
+                   (w :: Control.Monad.Fail.MonadFail m)
+                   (w1 :: Language.Haskell.ParseMonad.ParseMode)
+                   (w2 :: HParse.Lines)
+                   (w3 :: HParse.Lines) ->
+                 case w3 of wild {
+                   []
+                   -> case w of ww { Control.Monad.Fail.C:MonadFail ww1 ww2 ->
+                      HParse.$wpFail
+                        @ m
+                        @ (Language.Haskell.Syntax.HsExp, HParse.Lines)
+                        ww2
+                        w1
+                        HParse.hParseE14
+                        HParse.hParseE14
+                        HParse.hParseE12 }
+                   : ds ds1
+                   -> case ds of wild1 { (,) lno ds2 ->
+                      case Language.Haskell.Parser.$whappyNewToken
+                             0#
+                             (Language.Haskell.Parser.notHappyAtAll
+                                @ Language.Haskell.Parser.Happy_IntList)
+                             (Language.Haskell.Parser.notHappyAtAll
+                                @ (Language.Haskell.Parser.HappyStk
+                                     Language.Haskell.Parser.HappyAbsSyn))
+                             (HParse.mkNakedExprModule @ GHC.Types.Int wild)
+                             0#
+                             Language.Haskell.ParseMonad.lexNewline2
+                             (Language.Haskell.Syntax.SrcLoc
+                                (case w1 of wild2 { Language.Haskell.ParseMonad.ParseMode ds3 ->
+                                 ds3 })
+                                Language.Haskell.ParseMonad.lexNewline2
+                                Language.Haskell.ParseMonad.lexNewline2)
+                             (GHC.Types.[] @ Language.Haskell.ParseMonad.LexContext)
+                             w1 of wild2 {
+                        Language.Haskell.ParseMonad.Ok s' a1
+                        -> let {
+                             $dMonad :: GHC.Base.Monad m = Control.Monad.Fail.$p1MonadFail @ m w
+                           } in
+                           GHC.Base.>>=
+                             @ m
+                             $dMonad
+                             @ Language.Haskell.Syntax.HsExp
+                             @ (Language.Haskell.Syntax.HsExp, HParse.Lines)
+                             (case a1
+                                     `cast`
+                                   (UnsafeCo representational Language.Haskell.Parser.HappyAbsSyn Language.Haskell.Syntax.HsModule) of wild3 { Language.Haskell.Syntax.HsModule ds3 ds4 ds5 ds6 ds7 ->
+                              case ds7 of wild4 {
+                                []
+                                -> Control.Monad.Fail.fail
+                                     @ m
+                                     w
+                                     @ Language.Haskell.Syntax.HsExp
+                                     HParse.hParseE2
+                                : ds8 ds9
+                                -> case ds8 of wild5 {
+                                     DEFAULT
+                                     -> Control.Monad.Fail.fail
+                                          @ m
+                                          w
+                                          @ Language.Haskell.Syntax.HsExp
+                                          HParse.hParseE2
+                                     Language.Haskell.Syntax.HsPatBind ds10 ds11 ds12 ds13
+                                     -> case ds12 of wild6 {
+                                          Language.Haskell.Syntax.HsUnGuardedRhs hsexp
+                                          -> case ds13 of wild7 {
+                                               []
+                                               -> case ds9 of wild8 {
+                                                    []
+                                                    -> GHC.Base.return
+                                                         @ m
+                                                         $dMonad
+                                                         @ Language.Haskell.Syntax.HsExp
+                                                         hsexp
+                                                    : ipv ipv1
+                                                    -> Control.Monad.Fail.fail
+                                                         @ m
+                                                         w
+                                                         @ Language.Haskell.Syntax.HsExp
+                                                         HParse.hParseE2 }
+                                               : ipv ipv1
+                                               -> Control.Monad.Fail.fail
+                                                    @ m
+                                                    w
+                                                    @ Language.Haskell.Syntax.HsExp
+                                                    HParse.hParseE2 }
+                                          Language.Haskell.Syntax.HsGuardedRhss ipv
+                                          -> Control.Monad.Fail.fail
+                                               @ m
+                                               w
+                                               @ Language.Haskell.Syntax.HsExp
+                                               HParse.hParseE2 } } } })
+                             (\ (hsexp :: Language.Haskell.Syntax.HsExp) ->
+                              GHC.Base.return
+                                @ m
+                                $dMonad
+                                @ (Language.Haskell.Syntax.HsExp, HParse.Lines)
+                                (hsexp, w2))
+                        Language.Haskell.ParseMonad.Failed loc7 msg
+                        -> case w of ww { Control.Monad.Fail.C:MonadFail ww1 ww2 ->
+                           HParse.$wpFail
+                             @ m
+                             @ (Language.Haskell.Syntax.HsExp, HParse.Lines)
+                             ww2
+                             w1
+                             lno
+                             HParse.hParseE1
+                             msg } } } }) -}
+108a0a408e96013705aaca7931a0b602
+  $wpFail ::
+    (forall a1. GHC.Base.String -> m a1)
+    -> Language.Haskell.ParseMonad.ParseMode
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Base.String
+    -> m a
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <C(S),1*C1(U)><L,1*U(1*U)><L,1*U(U)><L,1*U(U)><L,U>,
+     Inline: [2],
+     Unfolding: (\ @ m :: * -> *
+                   @ a
+                   (ww :: forall a1. GHC.Base.String -> m a1)
+                   (w :: Language.Haskell.ParseMonad.ParseMode)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: GHC.Types.Int)
+                   (w3 :: GHC.Base.String) ->
+                 ww
+                   @ a
+                   (case w of wild { Language.Haskell.ParseMonad.ParseMode ds1 ->
+                    GHC.Base.++
+                      @ GHC.Types.Char
+                      ds1
+                      (GHC.Types.:
+                         @ GHC.Types.Char
+                         HParse.hParseE17
+                         (case w1 of ww2 { GHC.Types.I# ww3 ->
+                          case GHC.Show.$wshowSignedInt
+                                 0#
+                                 ww3
+                                 (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                          GHC.Base.++_$s++
+                            @ GHC.Types.Char
+                            (GHC.CString.unpackAppendCString#
+                               HParse.hParseE16
+                               (case w2 of ww1 { GHC.Types.I# ww8 ->
+                                case GHC.Show.$wshowSignedInt
+                                       0#
+                                       ww8
+                                       (GHC.Types.[] @ GHC.Types.Char) of ww9 { (#,#) ww10 ww11 ->
+                                GHC.Base.++_$s++
+                                  @ GHC.Types.Char
+                                  (GHC.CString.unpackAppendCString# HParse.hParseE15 w3)
+                                  ww10
+                                  ww11 } }))
+                            ww5
+                            ww6 } })) })) -}
+9fec38eeca94cb8e1301bd5a1a9fd3ac
+  $wparseEqual ::
+    GHC.Base.Monad m =>
+    (forall a. GHC.Base.String -> m a)
+    -> Language.Haskell.ParseMonad.ParseMode
+    -> HParse.Lines
+    -> HParse.Lines
+    -> m ((AST.Expr, AST.Expr), HParse.Lines)
+  {- Arity: 5,
+     Strictness: <L,1*U(A,A,A,1*C1(U),A)><L,1*C1(U)><L,U(U)><L,U><S,1*U>,
+     Inline: [2],
+     Unfolding: (\ @ m :: * -> *
+                   (ww :: GHC.Base.Monad m)
+                   (ww1 :: forall a. GHC.Base.String -> m a)
+                   (w :: Language.Haskell.ParseMonad.ParseMode)
+                   (w1 :: HParse.Lines)
+                   (w2 :: HParse.Lines) ->
+                 case w2 of wild {
+                   []
+                   -> HParse.$wpFail
+                        @ m
+                        @ ((AST.Expr, AST.Expr), HParse.Lines)
+                        ww1
+                        w
+                        HParse.hParseE14
+                        HParse.hParseE14
+                        HParse.parseEqual4
+                   : ds ds1
+                   -> case ds of wild1 { (,) lno ds2 ->
+                      case Language.Haskell.Parser.$whappyNewToken
+                             0#
+                             (Language.Haskell.Parser.notHappyAtAll
+                                @ Language.Haskell.Parser.Happy_IntList)
+                             (Language.Haskell.Parser.notHappyAtAll
+                                @ (Language.Haskell.Parser.HappyStk
+                                     Language.Haskell.Parser.HappyAbsSyn))
+                             (HParse.mkNakedExprModule @ GHC.Types.Int wild)
+                             0#
+                             Language.Haskell.ParseMonad.lexNewline2
+                             (Language.Haskell.Syntax.SrcLoc
+                                (case w of wild2 { Language.Haskell.ParseMonad.ParseMode ds3 ->
+                                 ds3 })
+                                Language.Haskell.ParseMonad.lexNewline2
+                                Language.Haskell.ParseMonad.lexNewline2)
+                             (GHC.Types.[] @ Language.Haskell.ParseMonad.LexContext)
+                             w of wild2 {
+                        Language.Haskell.ParseMonad.Ok s' a1
+                        -> GHC.Base.return
+                             @ m
+                             ww
+                             @ ((AST.Expr, AST.Expr), HParse.Lines)
+                             (case a1
+                                     `cast`
+                                   (UnsafeCo representational Language.Haskell.Parser.HappyAbsSyn Language.Haskell.Syntax.HsModule) of wild3 { Language.Haskell.Syntax.HsModule ds3 ds4 ds5 ds6 ds7 ->
+                              case ds7 of wild4 {
+                                [] -> HParse.parseEqual3
+                                : ds8 ds9
+                                -> case ds9 of wild5 {
+                                     [] -> HParse.parseEqual3
+                                     : ds10 ds11
+                                     -> case ds10 of wild6 {
+                                          DEFAULT -> HParse.parseEqual3
+                                          Language.Haskell.Syntax.HsPatBind ds12 ds13 ds14 ds15
+                                          -> case ds14 of wild7 {
+                                               Language.Haskell.Syntax.HsUnGuardedRhs hsexp
+                                               -> case ds15 of wild8 {
+                                                    []
+                                                    -> case ds11 of wild9 {
+                                                         []
+                                                         -> case hsexp of wild10 {
+                                                              DEFAULT -> HParse.parseEqual3
+                                                              Language.Haskell.Syntax.HsInfixApp e1 ds16 e2
+                                                              -> case ds16 of wild11 {
+                                                                   Language.Haskell.Syntax.HsQVarOp ds17
+                                                                   -> case ds17 of wild12 {
+                                                                        DEFAULT
+                                                                        -> HParse.parseEqual3
+                                                                        Language.Haskell.Syntax.UnQual ds18
+                                                                        -> case ds18 of wild13 {
+                                                                             Language.Haskell.Syntax.HsIdent ipv
+                                                                             -> HParse.parseEqual3
+                                                                             Language.Haskell.Syntax.HsSymbol ds19
+                                                                             -> case GHC.Base.eqString
+                                                                                       ds19
+                                                                                       HParse.parseEqual1 of wild14 {
+                                                                                  GHC.Types.False
+                                                                                  -> HParse.parseEqual3
+                                                                                  GHC.Types.True
+                                                                                  -> (AST.hsExp2Expr
+                                                                                        AST.preludeFixTab
+                                                                                        e1,
+                                                                                      AST.hsExp2Expr
+                                                                                        AST.preludeFixTab
+                                                                                        e2) } } }
+                                                                   Language.Haskell.Syntax.HsQConOp ipv
+                                                                   -> HParse.parseEqual3 } }
+                                                         : ipv ipv1 -> HParse.parseEqual3 }
+                                                    : ipv ipv1 -> HParse.parseEqual3 }
+                                               Language.Haskell.Syntax.HsGuardedRhss ipv
+                                               -> HParse.parseEqual3 } } } } },
+                              w1)
+                        Language.Haskell.ParseMonad.Failed loc7 msg
+                        -> HParse.$wpFail
+                             @ m
+                             @ ((AST.Expr, AST.Expr), HParse.Lines)
+                             ww1
+                             w
+                             lno
+                             HParse.hParseE1
+                             msg } } }) -}
+c849947e3ecd27b9e2edc11339c30f97
+  $wparseExpr ::
+    (forall a b. m a -> (a -> m b) -> m b)
+    -> (forall a. a -> m a)
+    -> (forall a. GHC.Base.String -> m a)
+    -> Language.Haskell.ParseMonad.ParseMode
+    -> HParse.Lines
+    -> HParse.Lines
+    -> m (AST.Expr, HParse.Lines)
+  {- Arity: 6,
+     Strictness: <C(C(S)),C(C1(U))><L,C(U)><L,1*C1(U)><L,U(U)><L,U><L,1*U>,
+     Inline: [2],
+     Unfolding: (\ @ m :: * -> *
+                   (ww :: forall a b. m a -> (a -> m b) -> m b)
+                   (ww1 :: forall a. a -> m a)
+                   (ww2 :: forall a. GHC.Base.String -> m a)
+                   (w :: Language.Haskell.ParseMonad.ParseMode)
+                   (w1 :: HParse.Lines)
+                   (w2 :: HParse.Lines) ->
+                 ww
+                   @ (Language.Haskell.Syntax.HsExp, HParse.Lines)
+                   @ (AST.Expr, HParse.Lines)
+                   (HParse.$whParseE
+                      @ m
+                      (Control.Monad.Fail.C:MonadFail
+                         @ m
+                         (GHC.Base.C:Monad
+                            @ m
+                            (HParse.parseExpr5 @ m)
+                            ww
+                            (HParse.parseExpr3 @ m)
+                            ww1
+                            (HParse.parseExpr1 @ m))
+                         ww2)
+                      w
+                      w1
+                      w2)
+                   (\ (ds :: (Language.Haskell.Syntax.HsExp, HParse.Lines)) ->
+                    case ds of wild { (,) hsexp lns' ->
+                    ww1
+                      @ (AST.Expr, HParse.Lines)
+                      (AST.hsExp2Expr AST.preludeFixTab hsexp, lns') })) -}
+3c5e9d834460c416c363c0016e1e0549
+  $wparseHModule ::
+    GHC.Base.Monad m =>
+    (forall a. GHC.Base.String -> m a)
+    -> GHC.Base.String -> GHC.Base.String -> m AST.Mdl
+  {- Arity: 4,
+     Strictness: <L,1*U(A,A,A,1*C1(U),A)><L,1*C1(U)><L,U><S,1*U>,
+     Inline: [2],
+     Unfolding: (\ @ m :: * -> *
+                   (ww :: GHC.Base.Monad m)
+                   (ww1 :: forall a. GHC.Base.String -> m a)
+                   (w :: GHC.Base.String)
+                   (w1 :: GHC.Base.String) ->
+                 let {
+                   pmode :: Language.Haskell.ParseMonad.ParseMode
+                   = Language.Haskell.ParseMonad.ParseMode w
+                 } in
+                 case Language.Haskell.Parser.$whappyNewToken
+                        0#
+                        (Language.Haskell.Parser.notHappyAtAll
+                           @ Language.Haskell.Parser.Happy_IntList)
+                        (Language.Haskell.Parser.notHappyAtAll
+                           @ (Language.Haskell.Parser.HappyStk
+                                Language.Haskell.Parser.HappyAbsSyn))
+                        w1
+                        0#
+                        Language.Haskell.ParseMonad.lexNewline2
+                        (Language.Haskell.Syntax.SrcLoc
+                           w
+                           Language.Haskell.ParseMonad.lexNewline2
+                           Language.Haskell.ParseMonad.lexNewline2)
+                        (GHC.Types.[] @ Language.Haskell.ParseMonad.LexContext)
+                        pmode of wild {
+                   Language.Haskell.ParseMonad.Ok s' a1
+                   -> GHC.Base.return
+                        @ m
+                        ww
+                        @ AST.Mdl
+                        (case a1
+                                `cast`
+                              (UnsafeCo representational Language.Haskell.Parser.HappyAbsSyn Language.Haskell.Syntax.HsModule) of ww2 { Language.Haskell.Syntax.HsModule ww3 ww4 ww5 ww6 ww7 ->
+                         AST.Mdl
+                           ww4 `cast` (Language.Haskell.Syntax.N:Module[0])
+                           (GHC.Base.map
+                              @ Language.Haskell.Syntax.HsImportDecl
+                              @ AST.Import
+                              AST.hsImpDcl2Imp
+                              ww6)
+                           (GHC.Base.map
+                              @ Language.Haskell.Syntax.HsDecl
+                              @ AST.Decl
+                              (AST.hsDecl2Decl (AST.buildFixTab AST.preludeFixTab ww7))
+                              ww7) })
+                   Language.Haskell.ParseMonad.Failed loc7 msg
+                   -> HParse.$wpFail
+                        @ m
+                        @ AST.Mdl
+                        ww1
+                        pmode
+                        (case loc7 of wild1 { Language.Haskell.Syntax.SrcLoc ds1 ds2 ds3 ->
+                         ds2 })
+                        (case loc7 of wild1 { Language.Haskell.Syntax.SrcLoc ds1 ds2 ds3 ->
+                         ds3 })
+                        msg }) -}
+b4e77ff2854881459de2d21c6edcb9ff
+  type Line = (GHC.Types.Int, GHC.Base.String)
+7ce5dcb135d1f3753ec0d5fb54cf266c
+  type Lines = [HParse.Line]
+5871783c5b7f8dd6ed484c4b3d6a1004
+  type Parser (m :: * -> *) a = HParse.Lines -> m (a, HParse.Lines)
+a9c3682f83ef7c94db5f366b065b2a51
+  hParseE ::
+    (GHC.Base.Monad m, Control.Monad.Fail.MonadFail m) =>
+    Language.Haskell.ParseMonad.ParseMode
+    -> HParse.Lines -> HParse.Parser m Language.Haskell.Syntax.HsExp
+  {- Arity: 5,
+     Strictness: <L,A><S,U(U(A,C(C1(U)),A,C(U),A),C(U))><L,U(U)><L,U><S,1*U>,
+     Inline: [2],
+     Unfolding: InlineRule (5, True, True)
+                (\ @ m :: * -> *
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: Control.Monad.Fail.MonadFail m)
+                   (w2 :: Language.Haskell.ParseMonad.ParseMode)
+                   (w3 :: HParse.Lines)
+                   (w4 :: HParse.Lines) ->
+                 HParse.$whParseE @ m w1 w2 w3 w4) -}
+823d173625339ab55e284b845a31933e
+  hParseE1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+9c69e9b46bed592e776d943db76e79e3
+  hParseE10 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (\ @ a ->
+                 GHC.Types.:
+                   @ [GHC.Types.Char]
+                   HParse.hParseE4
+                   (HParse.hParseE11 @ a)) -}
+663e73d9f8a5405478423cca63446663
+  hParseE11 :: [[GHC.Types.Char]]
+  {- Unfolding: (\ @ a ->
+                 GHC.Base.map
+                   @ (a, [GHC.Types.Char])
+                   @ [GHC.Types.Char]
+                   (Data.Tuple.snd @ a @ [GHC.Types.Char])
+                   (GHC.Types.[] @ (a, [GHC.Types.Char]))) -}
+a2a259d327305d8bfd6a697d11c8cbd1
+  hParseE12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# HParse.hParseE13) -}
+1c80db3e5d0c832c2cb67886887bbcac
+  hParseE13 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("no expression!"#) -}
+b72a497f49b140e87785a3c18187a6a1
+  hParseE14 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+794c44affb35bbde13df26985931d1d8
+  hParseE15 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: (" "#) -}
+bb74ceea89f82f00cd467eed68984441
+  hParseE16 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: (":"#) -}
+f4a68c5ec3656f3be701b3b9bb512e4f
+  hParseE17 :: GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# ':'#) -}
+87d1fd443d08874ff53eca77bfa780de
+  hParseE2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# HParse.hParseE3) -}
+6afdb32d293531fbac4bff314e19bfb8
+  hParseE3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("can't find the naked expression"#) -}
+0b33087cb5a3f0cd272008b10862bf53
+  hParseE4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# HParse.hParseE5) -}
+1bfd73c8bb5285296847da85960f8add
+  hParseE5 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("nakedExpr = "#) -}
+174891a76b248d66477bd63abdc3fada
+  hParseE6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# HParse.hParseE7) -}
+fedaf6da4495049bbde23c4cff6fcf66
+  hParseE7 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("module NakedExpr where"#) -}
+7b7b65ada35190fe8a3b48e488967f02
+  hParseE8 :: GHC.Base.String
+  {- Unfolding: (\ @ a ->
+                 Data.OldList.unlines (HParse.hParseE9 @ a)) -}
+4533f1086c3fdb709e7934326abfe8b3
+  hParseE9 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (\ @ a ->
+                 GHC.Types.:
+                   @ [GHC.Types.Char]
+                   HParse.hParseE6
+                   (HParse.hParseE10 @ a)) -}
+2c62cd9768cc4c77a2bf692d717e771e
+  hs1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 42#) -}
+e1a54aa279cf1dbcf3ca7fb71015dc8a
+  hs42 :: AST.Expr
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (AST.LInt HParse.hs1) -}
+b5a5b2a27ec839301c28ce80b5d6af7f
+  mkNakedExprModule :: [(a, [GHC.Types.Char])] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (ds :: [(a, [GHC.Types.Char])]) ->
+                 case ds of wild {
+                   [] -> HParse.hParseE8 @ a
+                   : ds1 ds2
+                   -> case ds1 of wild1 { (,) ds3 str ->
+                      case ds2 of wild2 {
+                        []
+                        -> Data.OldList.unlines
+                             (GHC.Types.:
+                                @ GHC.Base.String
+                                HParse.hParseE6
+                                (GHC.Types.:
+                                   @ GHC.Base.String
+                                   (GHC.CString.unpackAppendCString# HParse.hParseE5 str)
+                                   (GHC.Types.[] @ GHC.Base.String)))
+                        : ipv ipv1
+                        -> Data.OldList.unlines
+                             (GHC.Types.:
+                                @ [GHC.Types.Char]
+                                HParse.hParseE6
+                                (GHC.Types.:
+                                   @ [GHC.Types.Char]
+                                   HParse.hParseE4
+                                   (GHC.Base.map
+                                      @ (a, [GHC.Types.Char])
+                                      @ [GHC.Types.Char]
+                                      (Data.Tuple.snd @ a @ [GHC.Types.Char])
+                                      wild))) } } }) -}
+24c16612d22c9bf250a9e4b041f187d3
+  pFail ::
+    (GHC.Base.Monad m, Control.Monad.Fail.MonadFail m) =>
+    Language.Haskell.ParseMonad.ParseMode
+    -> GHC.Types.Int -> GHC.Types.Int -> GHC.Base.String -> m a
+  {- Arity: 6, HasNoCafRefs,
+     Strictness: <L,A><S(LC(S)),1*U(A,1*C1(U))><L,1*U(1*U)><L,1*U(U)><L,1*U(U)><L,U>,
+     Inline: [2],
+     Unfolding: InlineRule (6, True, False)
+                (\ @ m :: * -> *
+                   @ a
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: Control.Monad.Fail.MonadFail m)
+                   (w2 :: Language.Haskell.ParseMonad.ParseMode)
+                   (w3 :: GHC.Types.Int)
+                   (w4 :: GHC.Types.Int)
+                   (w5 :: GHC.Base.String) ->
+                 case w1 of ww { Control.Monad.Fail.C:MonadFail ww1 ww2 ->
+                 HParse.$wpFail @ m @ a ww2 w2 w3 w4 w5 }) -}
+8e085f1f816b179904bce95703ff5d14
+  parseEqual ::
+    (GHC.Base.Monad m, Control.Monad.Fail.MonadFail m) =>
+    Language.Haskell.ParseMonad.ParseMode
+    -> HParse.Lines -> HParse.Parser m (AST.Expr, AST.Expr)
+  {- Arity: 5,
+     Strictness: <L,A><S,1*U(1*U(A,A,A,1*C1(U),A),1*C1(U))><L,U(U)><L,U><S,1*U>,
+     Inline: [2],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ m :: * -> *
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: Control.Monad.Fail.MonadFail m)
+                   (w2 :: Language.Haskell.ParseMonad.ParseMode)
+                   (w3 :: HParse.Lines)
+                   (w4 :: HParse.Lines) ->
+                 case w1 of ww { Control.Monad.Fail.C:MonadFail ww1 ww2 ->
+                 HParse.$wparseEqual @ m ww1 ww2 w2 w3 w4 }) -}
+f70245a876c0019c27d090b31235bcf5
+  parseEqual1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# HParse.parseEqual2) -}
+691f76f8a9fed20a42f480fbf3cf0f8b
+  parseEqual2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("=="#) -}
+c2938244438321f29f1ef7d126f53714
+  parseEqual3 :: (AST.Expr, AST.Expr)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((HParse.hs42, HParse.hs42)) -}
+bf841eea7700224e3a36461959ff6a68
+  parseEqual4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# HParse.parseEqual5) -}
+edddddf4c52f4eee8fc82dc4a10fd838
+  parseEqual5 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("no equivalence!"#) -}
+b5798ff02d6a5fb692403bb18613b1f4
+  parseExpr ::
+    (GHC.Base.Monad m, Control.Monad.Fail.MonadFail m) =>
+    Language.Haskell.ParseMonad.ParseMode
+    -> HParse.Lines -> HParse.Parser m AST.Expr
+  {- Arity: 5,
+     Strictness: <L,A><S(S(LC(C(S))LLL)L),1*U(1*U(A,C(C1(U)),A,C(U),A),1*C1(U))><L,U(U)><L,U><L,1*U>,
+     Inline: [2],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ m :: * -> *
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: Control.Monad.Fail.MonadFail m)
+                   (w2 :: Language.Haskell.ParseMonad.ParseMode)
+                   (w3 :: HParse.Lines)
+                   (w4 :: HParse.Lines) ->
+                 case w1 of ww { Control.Monad.Fail.C:MonadFail ww1 ww2 ->
+                 case ww1 of ww3 { GHC.Base.C:Monad ww4 ww5 ww6 ww7 ww8 ->
+                 HParse.$wparseExpr @ m ww5 ww7 ww2 w2 w3 w4 } }) -}
+018716e0de8288c97328959214f0a1cc
+  parseExpr1 :: GHC.Base.String -> m a
+  {- Unfolding: (\ @ m :: * -> * ->
+                 Control.Exception.Base.absentError
+                   @ (forall a. GHC.Base.String -> m a)
+                   HParse.parseExpr2) -}
+503230d0401bf39bcbe72cf7450c75ed
+  parseExpr2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("ww forall a. String -> m a"#) -}
+9a097a50b29bb6fcf1ac64c56f3643fb
+  parseExpr3 :: m a -> m b -> m b
+  {- Unfolding: (\ @ m :: * -> * ->
+                 Control.Exception.Base.absentError
+                   @ (forall a b. m a -> m b -> m b)
+                   HParse.parseExpr4) -}
+c1ce7d75dcf5be72b3a232d8159f46da
+  parseExpr4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("ww forall a b. m a -> m b -> m b"#) -}
+71627bdfeb543747d533bc5f02747a6e
+  parseExpr5 :: GHC.Base.Applicative m
+  {- Unfolding: (\ @ m :: * -> * ->
+                 Control.Exception.Base.absentError
+                   @ (GHC.Base.Applicative m)
+                   HParse.parseExpr6) -}
+07a5ea9967acae2cd6b197080e77c30d
+  parseExpr6 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("ww Applicative m"#) -}
+39b8a158d6d2d85f2ea1a02b1ae46ec8
+  parseHModule ::
+    (GHC.Base.Monad m, Control.Monad.Fail.MonadFail m) =>
+    GHC.Base.String -> GHC.Base.String -> m AST.Mdl
+  {- Arity: 4,
+     Strictness: <L,A><S,1*U(1*U(A,A,A,1*C1(U),A),1*C1(U))><L,U><S,1*U>,
+     Inline: [2],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ m :: * -> *
+                   (w :: GHC.Base.Monad m)
+                   (w1 :: Control.Monad.Fail.MonadFail m)
+                   (w2 :: GHC.Base.String)
+                   (w3 :: GHC.Base.String) ->
+                 case w1 of ww { Control.Monad.Fail.C:MonadFail ww1 ww2 ->
+                 HParse.$wparseHModule @ m ww1 ww2 w2 w3 }) -}
+trusted: none
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+
